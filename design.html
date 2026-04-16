@@ -4,7 +4,7 @@
 <title>Design - Paniz Manufacturing</title>
 <style>
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-image: url('https://raw.githubusercontent.com/panizmazaheri953-sudo/Digital_Manufacturing_/main/Screenshot%202026-04-16%20at%2013.32.07.png');
@@ -15,8 +15,17 @@ body {
 .header {
   background-color: rgba(44, 95, 138, 0.9);
   color: white;
-  padding: 30px;
+  padding: 40px 30px;
   text-align: center;
+}
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+.header p {
+  font-size: 1.2rem;
+  margin: 10px 0 0;
+  opacity: 0.9;
 }
 .nav {
   background-color: rgba(26, 58, 92, 0.9);
@@ -28,74 +37,101 @@ body {
   text-decoration: none;
   margin: 0 15px;
   font-size: 18px;
+  font-weight: 500;
+  transition: opacity 0.3s;
 }
 .nav a:hover {
+  opacity: 0.7;
   text-decoration: underline;
 }
 .container {
   max-width: 1200px;
   margin: 40px auto;
-  padding: 40px;
-  color: white;
+  padding: 20px;
 }
-.container p {
-  font-size: 18px;
+.intro {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.intro p {
+  color: white;
+  font-size: 1.2rem;
   line-height: 1.6;
+  margin: 0;
 }
-h2 {
+.section-title {
+  text-align: center;
+  margin: 50px 0 30px;
+}
+.section-title h2 {
   color: white;
-  margin-top: 40px;
-  border-bottom: 2px solid rgba(255,255,255,0.3);
+  font-size: 2rem;
+  display: inline-block;
   padding-bottom: 10px;
+  border-bottom: 3px solid rgba(255,255,255,0.5);
 }
-h2:first-of-type {
-  margin-top: 0;
-}
-.image-gallery {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
   margin: 30px 0;
 }
 .image-card {
-  background: rgba(0,0,0,0.6);
-  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
   padding: 20px;
   text-align: center;
-  max-width: 400px;
+  transition: transform 0.3s;
 }
-.image-card img {
-  max-width: 100%;
-  border-radius: 10px;
-  border: 2px solid rgba(255,255,255,0.3);
+.image-card:hover {
+  transform: translateY(-5px);
 }
 .image-card h3 {
-  margin-top: 15px;
   color: white;
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+.image-card p {
+  color: #ccc;
+  margin: 10px 0;
 }
-th, td {
-  border: 1px solid rgba(255,255,255,0.3);
-  padding: 12px;
-  text-align: left;
+.image-card .badge {
+  display: inline-block;
+  background: rgba(44, 95, 138, 0.8);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 10px;
 }
-th {
-  background-color: rgba(44, 95, 138, 0.8);
-  color: white;
+.image-frame {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 15px 0;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-frame img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.placeholder-text {
+  color: #888;
+  font-style: italic;
+  padding: 40px;
 }
 .footer {
   background-color: rgba(26, 58, 92, 0.9);
   color: white;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 25px;
+  margin-top: 60px;
 }
 </style>
 </head>
@@ -117,56 +153,64 @@ th {
 
 <div class="container">
   
-  <h2>Design Process Overview</h2>
-  <p>The Phones-R-Us project required two casings: the <strong>bottom casing</strong> (drawing provided by client) and the <strong>top casing</strong> (reverse engineered from an existing part). Both models were created in Autodesk Fusion 360 and exported as STL files for additive manufacturing.</p>
+  <div class="intro">
+    <p>The Phones-R-Us project required two casings: the bottom casing (from client drawing) and the top casing (reverse engineered). Both models were created in Autodesk Fusion 360 and exported as STL files for additive manufacturing.</p>
+  </div>
   
-  <h2>Final CAD Designs</h2>
-  <div class="image-gallery">
+  <div class="section-title">
+    <h2>📐 2D CAD Drawings</h2>
+  </div>
+  
+  <div class="image-grid">
     <div class="image-card">
-      <h3>Top Casing</h3>
-      <p><em>Upload your top casing image below</em></p>
-      <p><strong>Design method:</strong> Reverse engineered from existing part</p>
-      <p><strong>File format:</strong> STL ready for printing</p>
+      <h3>Top Casing - 2D Drawing</h3>
+      <div class="image-frame">
+        <!-- REPLACE with your top casing 2D drawing image -->
+        <img src="YOUR_TOP_CASING_2D_DRAWING_URL" alt="Top Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>📐 Top casing 2D drawing will appear here<br>Upload your image and replace the URL</div>'">
+      </div>
+      <p>Reverse engineered dimensions</p>
+      <span class="badge">Fusion 360 Drawing</span>
     </div>
     <div class="image-card">
-      <h3>Bottom Casing</h3>
-      <p><em>Upload your bottom casing image below</em></p>
-      <p><strong>Design method:</strong> Created from client drawing</p>
-      <p><strong>File format:</strong> STL ready for printing</p>
+      <h3>Bottom Casing - 2D Drawing</h3>
+      <div class="image-frame">
+        <!-- REPLACE with your bottom casing 2D drawing image -->
+        <img src="YOUR_BOTTOM_CASING_2D_DRAWING_URL" alt="Bottom Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>📐 Bottom casing 2D drawing will appear here<br>Upload your image and replace the URL</div>'">
+      </div>
+      <p>Based on client drawing</p>
+      <span class="badge">Fusion 360 Drawing</span>
     </div>
   </div>
   
-  <h2>Design Specifications</h2>
-  <table>
-    <tr><th>Feature</th><th>Top Casing</th><th>Bottom Casing</th></tr>
-    <tr><td>Overall dimensions (mm)</td><td>150 x 75 x 8.5</td><td>150 x 75 x 8.5</td></tr>
-    <tr><td>Wall thickness (mm)</td><td>2.0</td><td>2.0</td></tr>
-    <tr><td>Material volume (cm³)</td><td>[Your data]</td><td>[Your data]</td></tr>
-    <tr><td>Estimated weight (g)</td><td>[Your data]</td><td>[Your data]</td></tr>
-  </table>
+  <div class="section-title">
+    <h2>🖥️ Fusion 360 3D CAD Models</h2>
+  </div>
   
-  <h2>Reverse Engineering Process (Top Casing)</h2>
-  <ul>
-    <li>Physical part received from Phones-R-Us</li>
-    <li>Measured using digital callipers and CMM</li>
-    <li>CAD model created in Fusion 360</li>
-    <li>Iterations adjusted to match drawing tolerances</li>
-    <li>Final STL exported for 3D printing</li>
-  </ul>
+  <div class="image-grid">
+    <div class="image-card">
+      <h3>Top Casing - 3D Model</h3>
+      <div class="image-frame">
+        <!-- REPLACE with your top casing Fusion 360 screenshot -->
+        <img src="YOUR_TOP_CASING_3D_URL" alt="Top Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>🔷 Top casing Fusion 360 model will appear here<br>Upload your screenshot and replace the URL</div>'">
+      </div>
+      <p>Reverse engineered from physical part</p>
+      <span class="badge">Fusion 360 | STL Ready</span>
+    </div>
+    <div class="image-card">
+      <h3>Bottom Casing - 3D Model</h3>
+      <div class="image-frame">
+        <!-- REPLACE with your bottom casing Fusion 360 screenshot -->
+        <img src="YOUR_BOTTOM_CASING_3D_URL" alt="Bottom Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>🔷 Bottom casing Fusion 360 model will appear here<br>Upload your screenshot and replace the URL</div>'">
+      </div>
+      <p>Created from client drawing</p>
+      <span class="badge">Fusion 360 | STL Ready</span>
+    </div>
+  </div>
   
-  <h2>From Drawing to CAD (Bottom Casing)</h2>
-  <ul>
-    <li>Client drawing with critical dimensions provided</li>
-    <li>Fusion 360 sketch based on drawing dimensions</li>
-    <li>3D extrusion and feature creation</li>
-    <li>Dimensional verification against drawing</li>
-    <li>STL export with optimal mesh resolution</li>
-  </ul>
-
 </div>
 
 <div class="footer">
-  <p>Paniz Manufacturing Company | CAD Design in Autodesk Fusion 360 | STL Files Ready for Printing</p>
+  <p>Paniz Manufacturing Company | Autodesk Fusion 360 | STL Files Ready for 3D Printing</p>
 </div>
 
 </body>
