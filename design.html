@@ -117,6 +117,14 @@ body {
   line-height: 1.5;
   text-align: left;
 }
+.image-card .dimensions {
+  background: rgba(255,215,0,0.1);
+  border-left: 3px solid #ffd700;
+  padding: 12px;
+  margin: 15px 0;
+  font-size: 0.9rem;
+  text-align: left;
+}
 .image-card .challenge {
   background: rgba(255,100,100,0.15);
   border-left: 3px solid #ff6666;
@@ -158,28 +166,23 @@ body {
   padding: 50px;
   text-align: center;
 }
-.challenge-box {
-  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.8));
-  border-radius: 20px;
-  padding: 35px;
-  margin: 50px 0 30px;
-  border-right: 4px solid #ffd700;
+.spec-table {
+  background: rgba(0,0,0,0.5);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px 0;
+  width: 100%;
+  border-collapse: collapse;
 }
-.challenge-box h3 {
+.spec-table th, .spec-table td {
+  padding: 12px;
+  text-align: left;
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.spec-table th {
   color: #ffd700;
-  font-size: 1.5rem;
-  margin-top: 0;
-}
-.challenge-box p {
-  color: #e0e0e0;
-  line-height: 1.7;
-  margin-bottom: 15px;
-}
-.challenge-box ul {
-  color: #e0e0e0;
-  line-height: 1.7;
-  margin: 15px 0;
-  padding-left: 25px;
+  font-weight: bold;
 }
 .footer {
   background: linear-gradient(135deg, rgba(26, 58, 92, 0.95), rgba(20, 40, 60, 0.95));
@@ -210,8 +213,15 @@ body {
 <div class="container">
   
   <div class="intro">
-    <p>The Phones-R-Us project required the development of two precision casings: the bottom casing was modelled directly from a detailed client drawing, while the top casing required complete reverse engineering from a physical sample. Both components were designed in Autodesk Fusion 360, with careful attention to dimensional accuracy, assembly fit, and manufacturability via FDM 3D printing. The final designs were exported as STL files, ready for the additive manufacturing phase.</p>
+    <p>The Phones-R-Us project required the development of two precision casings: the bottom casing was modelled directly from a detailed client drawing, while the top casing required reverse engineering from a physical sample. Both components were designed in Autodesk Fusion 360. The final designs were exported as STL files, ready for the additive manufacturing phase.</p>
   </div>
+  
+  <!-- DIMENSIONS SUMMARY -->
+  <table class="spec-table">
+    <tr><th>Component</th><th>Height</th><th>Width</th><th>Depth</th><th>Wall Thickness</th></tr>
+    <tr><td><strong>Top Casing</strong></td><td>114 mm</td><td>60 mm</td><td>11.7 mm</td><td>Set in 3D printing</td></tr>
+    <tr><td><strong>Bottom Casing</strong></td><td>114 mm</td><td>60 mm</td><td>13 mm</td><td>Set in 3D printing</td></tr>
+   </table>
   
   <!-- 2D CAD DRAWINGS SECTION -->
   <div class="section-title">
@@ -226,9 +236,12 @@ body {
       <div class="image-frame">
         <img src="YOUR_TOP_CASING_2D_DRAWING_URL" alt="Top Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>2D CAD Drawing - Top Casing<br>Upload image and replace URL</div>'">
       </div>
-      <p>The top casing was reverse engineered from a physical part provided by Phones-R-Us. Critical dimensions including width (150mm), height (75mm), depth (8.5mm), and hole positions were measured using digital callipers and a CMM. The 2D drawing captures all geometric features required for manufacturing.</p>
+      <p>The top casing was reverse engineered from a physical part provided by Phones-R-Us. The drawing provided had several challenges that needed to be worked through.</p>
+      <div class="dimensions">
+        <strong>📏 Final Dimensions:</strong> 114mm (height) × 60mm (width) × 11.7mm (depth)
+      </div>
       <div class="challenge">
-        <strong>⚠️ Measurement Challenge:</strong> The original top casing had worn edges and inconsistent radii, making accurate dimension extraction difficult. Multiple measurement passes were required, and averaged values were used for the final drawing. The hole pattern was particularly challenging due to slight asymmetries in the physical sample.
+        <strong>⚠️ Drawing Challenge:</strong> The top casing drawing had missing dimensions and confusing cross-sections. It was often unclear where exactly on the top casing each measurement applied. The solution was to calculate the missing values from other measurements available on the drawing, cross-referencing multiple views to determine the correct locations.
       </div>
       <span class="badge">Fusion 360 Drawing</span>
     </div>
@@ -240,9 +253,12 @@ body {
       <div class="image-frame">
         <img src="YOUR_BOTTOM_CASING_2D_DRAWING_URL" alt="Bottom Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>2D CAD Drawing - Bottom Casing<br>Upload image and replace URL</div>'">
       </div>
-      <p>The bottom casing was created directly from the client's engineering drawing. All dimensions were interpreted and modelled precisely to meet the specified tolerances of ±0.1mm. The drawing included critical features such as mounting holes, alignment ribs, and the battery compartment cutout.</p>
+      <p>The bottom casing was created directly from the client's engineering drawing. Unlike the top casing, this drawing was clear and complete, allowing for straightforward translation into CAD.</p>
+      <div class="dimensions">
+        <strong>📏 Final Dimensions:</strong> 114mm (height) × 60mm (width) × 13mm (depth)
+      </div>
       <div class="challenge">
-        <strong>⚠️ Drawing Interpretation:</strong> The client drawing had ambiguous dimensioning on two internal features. Consultation with Phones-R-Us engineers clarified these details, resulting in a revised drawing that accurately represented the intended geometry.
+        <strong>✓ Drawing Status:</strong> The bottom drawing was clear with no major issues. All dimensions were properly labelled and cross-referenced correctly between views.
       </div>
       <span class="badge">Fusion 360 Drawing</span>
     </div>
@@ -261,10 +277,7 @@ body {
       <div class="image-frame">
         <img src="YOUR_TOP_CASING_3D_URL" alt="Top Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>3D CAD Model - Top Casing<br>Upload screenshot and replace URL</div>'">
       </div>
-      <p>The 3D model was built in Fusion 360 using the reverse engineered dimensions. The modelling process involved creating base extrusions, adding fillets for stress relief, modelling the button cutouts, and designing the internal snap-fit features. Three design iterations were completed to optimise the fit with the bottom casing.</p>
-      <div class="challenge">
-        <strong>⚠️ Reverse Engineering Challenge:</strong> The original part had subtle curvature that was difficult to measure with standard tools. A 3D scan was attempted, but the reflective surface caused errors. Ultimately, the curvature was approximated using spline profiles with iterative test prints to verify fit.
-      </div>
+      <p>The 3D model was built in Fusion 360 using the reverse engineered dimensions. The top casing has a non-flat geometry, with depth varying across the part. Wall thickness parameters were defined during the 3D printing stage rather than in the CAD model.</p>
       <span class="badge">Fusion 360 | STL Exported</span>
     </div>
     
@@ -275,20 +288,9 @@ body {
       <div class="image-frame">
         <img src="YOUR_BOTTOM_CASING_3D_URL" alt="Bottom Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>3D CAD Model - Bottom Casing<br>Upload screenshot and replace URL</div>'">
       </div>
-      <p>The bottom casing 3D model was developed directly from the client drawing. Key modelling steps included sketching the base profile, extruding to depth, adding the battery compartment, creating mounting bosses, and incorporating alignment features. The model was verified against the drawing at each stage.</p>
-      <div class="challenge">
-        <strong>⚠️ Design for Manufacturability:</strong> The original drawing specified sharp internal corners that would be impossible to achieve with FDM printing without supports. These were redesigned with 1mm fillets, which were approved by the client after functional testing confirmed no interference with internal components.
-      </div>
+      <p>The bottom casing 3D model was developed directly from the client drawing. With a consistent depth of 13mm and clear dimensions throughout, the modelling process was straightforward. The model was verified against the drawing at each stage.</p>
       <span class="badge">Fusion 360 | STL Exported</span>
     </div>
-  </div>
-  
-  <!-- DESIGN CHALLENGES SUMMARY -->
-  <div class="challenge-box">
-    <h3>Key Design Challenges & Resolutions</h3>
-    <p><strong>Top Casing - Unclear Measurements:</strong> The physical top casing provided had worn edges (±0.2mm variation) and inconsistent radii. This was resolved by taking 15 measurements per critical dimension at different locations, averaging the results, and then producing test prints to validate the fit with the bottom casing. The final dimensions were iteratively adjusted based on assembly tests.</p>
-    <p><strong>Bottom Casing - Drawing Ambiguity:</strong> Two dimensions on the client drawing referenced non-existent datums. After contacting Phones-R-Us engineering, the correct datum surfaces were identified and the drawing was updated. This prevented a costly manufacturing error.</p>
-    <p><strong>Interchangeability Requirement:</strong> Both casings needed to work with existing supplier components. This required precise modelling of the mating surfaces and extensive cross-referencing with sample parts from the other supplier.</p>
   </div>
   
 </div>
