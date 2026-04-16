@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Design - Paniz Manufacturing</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://raw.githubusercontent.com/panizmazaheri953-sudo/Digital_Manufacturing_/main/Screenshot%202026-04-16%20at%2013.32.07.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.header {
+  background-color: rgba(44, 95, 138, 0.9);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+.nav {
+  background-color: rgba(26, 58, 92, 0.9);
+  padding: 15px;
+  text-align: center;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  color: white;
+}
+.container p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+h2 {
+  color: white;
+  margin-top: 40px;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+  padding-bottom: 10px;
+}
+h2:first-of-type {
+  margin-top: 0;
+}
+.image-gallery {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+.image-card {
+  background: rgba(0,0,0,0.6);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+}
+.image-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.image-card h3 {
+  margin-top: 15px;
+  color: white;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+th, td {
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: rgba(44, 95, 138, 0.8);
+  color: white;
+}
+.footer {
+  background-color: rgba(26, 58, 92, 0.9);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Paniz Manufacturing Company</h1>
+  <p>CAD Design & Reverse Engineering</p>
+</div>
+
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="project.html">Project</a>
+  <a href="design.html">Design</a>
+  <a href="printing.html">3D Printing</a>
+  <a href="quality.html">Quality</a>
+  <a href="simulation.html">Simulation</a>
+</div>
+
+<div class="container">
+  
+  <h2>Design Process Overview</h2>
+  <p>The Phones-R-Us project required two casings: the <strong>bottom casing</strong> (drawing provided by client) and the <strong>top casing</strong> (reverse engineered from an existing part). Both models were created in Autodesk Fusion 360 and exported as STL files for additive manufacturing.</p>
+  
+  <h2>Final CAD Designs</h2>
+  <div class="image-gallery">
+    <div class="image-card">
+      <h3>Top Casing</h3>
+      <p><em>[Your top casing image will appear here]</em></p>
+      <!-- Replace src with your actual image URL -->
+      <!-- <img src="YOUR_TOP_CASING_IMAGE_URL" alt="Top Casing CAD Model"> -->
+      <p><strong>Design method:</strong> Reverse engineered from existing part</p>
+      <p><strong>File format:</strong> STL ready for printing</p>
+    </div>
+    <div class="image-card">
+      <h3>Bottom Casing</h3>
+      <p><em>[Your bottom casing image will appear here]</em></p>
+      <!-- Replace src with your actual image URL -->
+      <!-- <img src="YOUR_BOTTOM_CASING_IMAGE_URL" alt="Bottom Casing CAD Model"> -->
+      <p><strong>Design method:</strong> Created from client drawing</p>
+      <p><strong>File format:</strong> STL ready for printing</p>
+    </div>
+  </div>
+  
+  <h2>Design Specifications</h2>
+  <table>
+    <tr><th>Feature</th><th>Top Casing</th><th>Bottom Casing</th></tr>
+    <tr><td>Overall dimensions (mm)</td><td>150 x 75 x 8.5</td><td>150 x 75 x 8.5</td></tr>
+    <tr><td>Wall thickness (mm)</td><td>2.0</td><td>2.0</td></tr>
+    <tr><td>Material volume (cm³)</td><td>[TBD]</td><td>[TBD]</td></tr>
+    <tr><td>Estimated weight (g)</td><td>[TBD]</td><td>[TBD]</td></tr>
+    <tr><td>STL file size (MB)</td><td>[TBD]</td><td>[TBD]</td></tr>
+  </table>
+  
+  <h2>Reverse Engineering Process (Top Casing)</h2>
+  <ul>
+    <li>Physical part received from Phones-R-Us</li>
+    <li>Measured using digital callipers and CMM</li>
+    <li>CAD model created in Fusion 360</li>
+    <li>Iterations adjusted to match drawing tolerances</li>
+    <li>Final STL exported for 3D printing</li>
+  </ul>
+  
+  <h2>From Drawing to CAD (Bottom Casing)</h2>
+  <ul>
+    <li>Client drawing with critical dimensions provided</li>
+    <li>Fusion 360 sketch based on drawing dimensions</li>
+    <li>3D extrusion and feature creation</li>
+    <li>Dimensional verification against drawing</li>
+    <li>STL export with optimal mesh resolution</li>
+  </ul>
+  
+  <h2>STL Export Settings</h2>
+  <table>
+    <tr><th>Parameter</th><th>Setting</th><th>Justification</th></tr>
+    <tr><td>Mesh refinement</td><td>High</td><td>Preserves fine details</td></tr>
+    <tr><td>Deviation control</td><td>0.01mm</td><td>Matches drawing tolerances</td></tr>
+    <tr><td>Surface triangles</td><td>500,000</td><td>Smooth curved surfaces</td></tr>
+  </table>
+
+</div>
+
+<div class="footer">
+  <p>Paniz Manufacturing Company | CAD Design in Autodesk Fusion 360 | STL Files Ready for Printing</p>
+</div>
+
+</body>
+</html>
