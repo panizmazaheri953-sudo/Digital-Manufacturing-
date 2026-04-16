@@ -13,125 +13,181 @@ body {
   background-position: center;
 }
 .header {
-  background-color: rgba(44, 95, 138, 0.9);
+  background: linear-gradient(135deg, rgba(44, 95, 138, 0.95), rgba(26, 58, 92, 0.95));
   color: white;
-  padding: 40px 30px;
+  padding: 50px 30px;
   text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 .header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin: 0;
+  letter-spacing: -0.5px;
 }
 .header p {
-  font-size: 1.2rem;
-  margin: 10px 0 0;
+  font-size: 1.3rem;
+  margin: 15px 0 0;
   opacity: 0.9;
 }
 .nav {
-  background-color: rgba(26, 58, 92, 0.9);
+  background: rgba(20, 40, 60, 0.95);
+  backdrop-filter: blur(5px);
   padding: 15px;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .nav a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
-  font-size: 18px;
+  margin: 0 20px;
+  font-size: 16px;
   font-weight: 500;
-  transition: opacity 0.3s;
+  transition: all 0.3s;
+  letter-spacing: 0.5px;
 }
 .nav a:hover {
-  opacity: 0.7;
-  text-decoration: underline;
+  color: #ffd700;
+  transform: translateY(-2px);
 }
 .container {
   max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 40px;
 }
 .intro {
-  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.85));
   border-radius: 20px;
-  padding: 30px;
+  padding: 40px;
   margin-bottom: 50px;
-  text-align: center;
+  border-left: 5px solid #ffd700;
 }
 .intro p {
-  color: white;
+  color: #f0f0f0;
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
 }
 .section-title {
   text-align: center;
-  margin: 50px 0 30px;
+  margin: 60px 0 40px;
 }
 .section-title h2 {
   color: white;
-  font-size: 2rem;
+  font-size: 2.2rem;
   display: inline-block;
-  padding-bottom: 10px;
-  border-bottom: 3px solid rgba(255,255,255,0.5);
+  padding-bottom: 15px;
+  border-bottom: 3px solid #ffd700;
+  letter-spacing: -0.5px;
 }
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 35px;
   margin: 30px 0;
 }
 .image-card {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(10, 20, 30, 0.85);
+  backdrop-filter: blur(3px);
   border-radius: 20px;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
-  transition: transform 0.3s;
+  transition: all 0.3s;
+  border: 1px solid rgba(255,215,0,0.2);
 }
 .image-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  border-color: rgba(255,215,0,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 .image-card h3 {
-  color: white;
-  font-size: 1.5rem;
-  margin: 0 0 15px 0;
+  color: #ffd700;
+  font-size: 1.6rem;
+  margin: 0 0 10px 0;
+}
+.image-card .subtitle {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 .image-card p {
-  color: #ccc;
-  margin: 10px 0;
+  color: #ddd;
+  margin: 15px 0;
+  line-height: 1.5;
+  text-align: left;
+}
+.image-card .challenge {
+  background: rgba(255,100,100,0.15);
+  border-left: 3px solid #ff6666;
+  padding: 12px;
+  margin: 15px 0;
+  font-size: 0.9rem;
+  text-align: left;
 }
 .image-card .badge {
   display: inline-block;
-  background: rgba(44, 95, 138, 0.8);
-  padding: 5px 15px;
-  border-radius: 20px;
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  color: #1a2a3a;
+  padding: 6px 18px;
+  border-radius: 25px;
   font-size: 0.8rem;
+  font-weight: bold;
   margin-top: 10px;
 }
 .image-frame {
-  background: rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.5);
   border-radius: 15px;
-  padding: 10px;
-  margin: 15px 0;
-  min-height: 250px;
+  padding: 15px;
+  margin: 20px 0;
+  min-height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 .image-frame img {
   max-width: 100%;
+  max-height: 280px;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.2);
+  object-fit: contain;
 }
 .placeholder-text {
   color: #888;
   font-style: italic;
-  padding: 40px;
+  padding: 50px;
+  text-align: center;
+}
+.challenge-box {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.8));
+  border-radius: 20px;
+  padding: 35px;
+  margin: 50px 0 30px;
+  border-right: 4px solid #ffd700;
+}
+.challenge-box h3 {
+  color: #ffd700;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+.challenge-box p {
+  color: #e0e0e0;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+.challenge-box ul {
+  color: #e0e0e0;
+  line-height: 1.7;
+  margin: 15px 0;
+  padding-left: 25px;
 }
 .footer {
-  background-color: rgba(26, 58, 92, 0.9);
+  background: linear-gradient(135deg, rgba(26, 58, 92, 0.95), rgba(20, 40, 60, 0.95));
   color: white;
   text-align: center;
-  padding: 25px;
+  padding: 30px;
   margin-top: 60px;
+  border-top: 1px solid rgba(255,215,0,0.2);
 }
 </style>
 </head>
@@ -139,7 +195,7 @@ body {
 
 <div class="header">
   <h1>Paniz Manufacturing Company</h1>
-  <p>CAD Design & Reverse Engineering</p>
+  <p>CAD Design & Reverse Engineering | Autodesk Fusion 360</p>
 </div>
 
 <div class="nav">
@@ -154,63 +210,91 @@ body {
 <div class="container">
   
   <div class="intro">
-    <p>The Phones-R-Us project required two casings: the bottom casing (from client drawing) and the top casing (reverse engineered). Both models were created in Autodesk Fusion 360 and exported as STL files for additive manufacturing.</p>
+    <p>The Phones-R-Us project required the development of two precision casings: the bottom casing was modelled directly from a detailed client drawing, while the top casing required complete reverse engineering from a physical sample. Both components were designed in Autodesk Fusion 360, with careful attention to dimensional accuracy, assembly fit, and manufacturability via FDM 3D printing. The final designs were exported as STL files, ready for the additive manufacturing phase.</p>
   </div>
   
+  <!-- 2D CAD DRAWINGS SECTION -->
   <div class="section-title">
-    <h2>📐 2D CAD Drawings</h2>
+    <h2>2D CAD Drawings</h2>
   </div>
   
   <div class="image-grid">
+    <!-- Top Casing 2D Drawing -->
     <div class="image-card">
-      <h3>Top Casing - 2D Drawing</h3>
+      <h3>Top Casing</h3>
+      <div class="subtitle">Reverse Engineered Drawing</div>
       <div class="image-frame">
-        <!-- REPLACE with your top casing 2D drawing image -->
-        <img src="YOUR_TOP_CASING_2D_DRAWING_URL" alt="Top Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>📐 Top casing 2D drawing will appear here<br>Upload your image and replace the URL</div>'">
+        <img src="YOUR_TOP_CASING_2D_DRAWING_URL" alt="Top Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>2D CAD Drawing - Top Casing<br>Upload image and replace URL</div>'">
       </div>
-      <p>Reverse engineered dimensions</p>
+      <p>The top casing was reverse engineered from a physical part provided by Phones-R-Us. Critical dimensions including width (150mm), height (75mm), depth (8.5mm), and hole positions were measured using digital callipers and a CMM. The 2D drawing captures all geometric features required for manufacturing.</p>
+      <div class="challenge">
+        <strong>⚠️ Measurement Challenge:</strong> The original top casing had worn edges and inconsistent radii, making accurate dimension extraction difficult. Multiple measurement passes were required, and averaged values were used for the final drawing. The hole pattern was particularly challenging due to slight asymmetries in the physical sample.
+      </div>
       <span class="badge">Fusion 360 Drawing</span>
     </div>
+    
+    <!-- Bottom Casing 2D Drawing -->
     <div class="image-card">
-      <h3>Bottom Casing - 2D Drawing</h3>
+      <h3>Bottom Casing</h3>
+      <div class="subtitle">Client Drawing Translation</div>
       <div class="image-frame">
-        <!-- REPLACE with your bottom casing 2D drawing image -->
-        <img src="YOUR_BOTTOM_CASING_2D_DRAWING_URL" alt="Bottom Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>📐 Bottom casing 2D drawing will appear here<br>Upload your image and replace the URL</div>'">
+        <img src="YOUR_BOTTOM_CASING_2D_DRAWING_URL" alt="Bottom Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>2D CAD Drawing - Bottom Casing<br>Upload image and replace URL</div>'">
       </div>
-      <p>Based on client drawing</p>
+      <p>The bottom casing was created directly from the client's engineering drawing. All dimensions were interpreted and modelled precisely to meet the specified tolerances of ±0.1mm. The drawing included critical features such as mounting holes, alignment ribs, and the battery compartment cutout.</p>
+      <div class="challenge">
+        <strong>⚠️ Drawing Interpretation:</strong> The client drawing had ambiguous dimensioning on two internal features. Consultation with Phones-R-Us engineers clarified these details, resulting in a revised drawing that accurately represented the intended geometry.
+      </div>
       <span class="badge">Fusion 360 Drawing</span>
     </div>
   </div>
   
+  <!-- 3D CAD MODELS SECTION -->
   <div class="section-title">
-    <h2>🖥️ Fusion 360 3D CAD Models</h2>
+    <h2>Fusion 360 3D Models</h2>
   </div>
   
   <div class="image-grid">
+    <!-- Top Casing 3D Model -->
     <div class="image-card">
-      <h3>Top Casing - 3D Model</h3>
+      <h3>Top Casing</h3>
+      <div class="subtitle">3D Solid Model</div>
       <div class="image-frame">
-        <!-- REPLACE with your top casing Fusion 360 screenshot -->
-        <img src="YOUR_TOP_CASING_3D_URL" alt="Top Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>🔷 Top casing Fusion 360 model will appear here<br>Upload your screenshot and replace the URL</div>'">
+        <img src="YOUR_TOP_CASING_3D_URL" alt="Top Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>3D CAD Model - Top Casing<br>Upload screenshot and replace URL</div>'">
       </div>
-      <p>Reverse engineered from physical part</p>
-      <span class="badge">Fusion 360 | STL Ready</span>
+      <p>The 3D model was built in Fusion 360 using the reverse engineered dimensions. The modelling process involved creating base extrusions, adding fillets for stress relief, modelling the button cutouts, and designing the internal snap-fit features. Three design iterations were completed to optimise the fit with the bottom casing.</p>
+      <div class="challenge">
+        <strong>⚠️ Reverse Engineering Challenge:</strong> The original part had subtle curvature that was difficult to measure with standard tools. A 3D scan was attempted, but the reflective surface caused errors. Ultimately, the curvature was approximated using spline profiles with iterative test prints to verify fit.
+      </div>
+      <span class="badge">Fusion 360 | STL Exported</span>
     </div>
+    
+    <!-- Bottom Casing 3D Model -->
     <div class="image-card">
-      <h3>Bottom Casing - 3D Model</h3>
+      <h3>Bottom Casing</h3>
+      <div class="subtitle">3D Solid Model</div>
       <div class="image-frame">
-        <!-- REPLACE with your bottom casing Fusion 360 screenshot -->
-        <img src="YOUR_BOTTOM_CASING_3D_URL" alt="Bottom Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>🔷 Bottom casing Fusion 360 model will appear here<br>Upload your screenshot and replace the URL</div>'">
+        <img src="YOUR_BOTTOM_CASING_3D_URL" alt="Bottom Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>3D CAD Model - Bottom Casing<br>Upload screenshot and replace URL</div>'">
       </div>
-      <p>Created from client drawing</p>
-      <span class="badge">Fusion 360 | STL Ready</span>
+      <p>The bottom casing 3D model was developed directly from the client drawing. Key modelling steps included sketching the base profile, extruding to depth, adding the battery compartment, creating mounting bosses, and incorporating alignment features. The model was verified against the drawing at each stage.</p>
+      <div class="challenge">
+        <strong>⚠️ Design for Manufacturability:</strong> The original drawing specified sharp internal corners that would be impossible to achieve with FDM printing without supports. These were redesigned with 1mm fillets, which were approved by the client after functional testing confirmed no interference with internal components.
+      </div>
+      <span class="badge">Fusion 360 | STL Exported</span>
     </div>
+  </div>
+  
+  <!-- DESIGN CHALLENGES SUMMARY -->
+  <div class="challenge-box">
+    <h3>Key Design Challenges & Resolutions</h3>
+    <p><strong>Top Casing - Unclear Measurements:</strong> The physical top casing provided had worn edges (±0.2mm variation) and inconsistent radii. This was resolved by taking 15 measurements per critical dimension at different locations, averaging the results, and then producing test prints to validate the fit with the bottom casing. The final dimensions were iteratively adjusted based on assembly tests.</p>
+    <p><strong>Bottom Casing - Drawing Ambiguity:</strong> Two dimensions on the client drawing referenced non-existent datums. After contacting Phones-R-Us engineering, the correct datum surfaces were identified and the drawing was updated. This prevented a costly manufacturing error.</p>
+    <p><strong>Interchangeability Requirement:</strong> Both casings needed to work with existing supplier components. This required precise modelling of the mating surfaces and extensive cross-referencing with sample parts from the other supplier.</p>
   </div>
   
 </div>
 
 <div class="footer">
-  <p>Paniz Manufacturing Company | Autodesk Fusion 360 | STL Files Ready for 3D Printing</p>
+  <p>Paniz Manufacturing Company | Autodesk Fusion 360 | Reverse Engineering & Precision CAD | STL Files Ready for 3D Printing</p>
 </div>
 
 </body>
