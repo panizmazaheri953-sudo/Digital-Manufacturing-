@@ -15,24 +15,21 @@ body {
 .header {
   background: linear-gradient(135deg, rgba(44, 95, 138, 0.95), rgba(26, 58, 92, 0.95));
   color: white;
-  padding: 50px 30px;
+  padding: 40px 30px;
   text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 .header h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   margin: 0;
-  letter-spacing: -0.5px;
 }
 .header p {
-  font-size: 1.3rem;
-  margin: 15px 0 0;
+  font-size: 1.2rem;
+  margin: 10px 0 0;
   opacity: 0.9;
 }
 .nav {
-  background: rgba(20, 40, 60, 0.95);
-  backdrop-filter: blur(5px);
-  padding: 15px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 12px;
   text-align: center;
   position: sticky;
   top: 0;
@@ -41,156 +38,155 @@ body {
 .nav a {
   color: white;
   text-decoration: none;
-  margin: 0 20px;
-  font-size: 16px;
+  margin: 0 15px;
+  font-size: 15px;
   font-weight: 500;
-  transition: all 0.3s;
-  letter-spacing: 0.5px;
+  transition: color 0.3s;
 }
 .nav a:hover {
   color: #ffd700;
-  transform: translateY(-2px);
 }
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 30px;
 }
 .intro {
-  background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.85));
-  border-radius: 20px;
-  padding: 40px;
-  margin-bottom: 50px;
-  border-left: 5px solid #ffd700;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  border-left: 4px solid #ffd700;
 }
 .intro p {
-  color: #f0f0f0;
-  font-size: 1.2rem;
-  line-height: 1.7;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
   margin: 0;
 }
 .section-title {
   text-align: center;
-  margin: 60px 0 40px;
+  margin: 30px 0 25px;
 }
 .section-title h2 {
-  color: white;
-  font-size: 2.2rem;
+  color: #ffd700;
+  font-size: 1.8rem;
+  margin: 0;
   display: inline-block;
-  padding-bottom: 15px;
-  border-bottom: 3px solid #ffd700;
-  letter-spacing: -0.5px;
+  background: rgba(0,0,0,0.7);
+  padding: 8px 25px;
+  border-radius: 40px;
 }
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 35px;
-  margin: 30px 0;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 25px;
+  margin: 20px 0;
 }
 .image-card {
-  background: rgba(10, 20, 30, 0.85);
-  backdrop-filter: blur(3px);
-  border-radius: 20px;
-  padding: 25px;
-  text-align: center;
-  transition: all 0.3s;
-  border: 1px solid rgba(255,215,0,0.2);
-}
-.image-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255,215,0,0.5);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255,215,0,0.3);
 }
 .image-card h3 {
   color: #ffd700;
-  font-size: 1.6rem;
-  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  margin: 0 0 5px 0;
 }
 .image-card .subtitle {
   color: #aaa;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 8px;
 }
 .image-card p {
-  color: #ddd;
-  margin: 15px 0;
+  color: #e0e0e0;
+  margin: 12px 0;
   line-height: 1.5;
+  font-size: 0.95rem;
   text-align: left;
 }
 .image-card .dimensions {
-  background: rgba(255,215,0,0.1);
-  border-left: 3px solid #ffd700;
-  padding: 12px;
-  margin: 15px 0;
+  background: rgba(255,215,0,0.12);
+  padding: 10px;
+  margin: 12px 0;
   font-size: 0.9rem;
   text-align: left;
+  border-radius: 8px;
+  color: #ffd700;
 }
 .image-card .challenge {
-  background: rgba(255,100,100,0.15);
-  border-left: 3px solid #ff6666;
+  background: rgba(0, 0, 0, 0.6);
   padding: 12px;
-  margin: 15px 0;
+  margin: 12px 0;
   font-size: 0.9rem;
   text-align: left;
+  border-radius: 8px;
+  color: #ffcccc;
+  border-left: 3px solid #ff6666;
 }
 .image-card .badge {
   display: inline-block;
-  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  background: #ffd700;
   color: #1a2a3a;
-  padding: 6px 18px;
-  border-radius: 25px;
-  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 .image-frame {
-  background: rgba(0,0,0,0.5);
-  border-radius: 15px;
-  padding: 15px;
-  margin: 20px 0;
-  min-height: 280px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 12px 0;
+  min-height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 .image-frame img {
   max-width: 100%;
-  max-height: 280px;
-  border-radius: 10px;
+  max-height: 250px;
+  border-radius: 8px;
   object-fit: contain;
 }
 .placeholder-text {
   color: #888;
   font-style: italic;
-  padding: 50px;
+  padding: 30px;
   text-align: center;
+  font-size: 0.85rem;
 }
 .spec-table {
-  background: rgba(0,0,0,0.5);
-  border-radius: 15px;
-  padding: 20px;
-  margin: 30px 0;
+  background: rgba(0,0,0,0.8);
+  border-radius: 12px;
+  padding: 15px;
+  margin: 20px 0 30px;
   width: 100%;
   border-collapse: collapse;
 }
 .spec-table th, .spec-table td {
-  padding: 12px;
+  padding: 10px 12px;
   text-align: left;
   color: white;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  font-size: 0.9rem;
 }
 .spec-table th {
   color: #ffd700;
   font-weight: bold;
 }
 .footer {
-  background: linear-gradient(135deg, rgba(26, 58, 92, 0.95), rgba(20, 40, 60, 0.95));
+  background: rgba(0, 0, 0, 0.85);
   color: white;
   text-align: center;
-  padding: 30px;
-  margin-top: 60px;
-  border-top: 1px solid rgba(255,215,0,0.2);
+  padding: 20px;
+  margin-top: 30px;
+  font-size: 0.85rem;
 }
 </style>
 </head>
@@ -201,15 +197,15 @@ body {
   <p>CAD Design & Reverse Engineering | Autodesk Fusion 360</p>
 </div>
 
-  <div class="nav">
-  <a href="index.html">Home</a>
-  <a href="project.html">Project</a>
-  <a href="design.html">Design</a>
-  <a href="printing.html">3D Printing</a>
-  <a href="quality.html">Quality</a>
-  <a href="simulation.html">Simulation</a>
+<div class="nav">
+  <a href="https://panizmazaheri953-sudo.github.io/Digital_Manufacturing_/index.html">Home</a>
+  <a href="https://panizmazaheri953-sudo.github.io/Digital_Manufacturing_/project.html">Project</a>
+  <a href="https://panizmazaheri953-sudo.github.io/Digital_Manufacturing_/design.html">Design</a>
+  <a href="https://panizmazaheri953-sudo.github.io/Digital_Manufacturing_/printing.html">3D Printing</a>
+  <a href="https://panizmazaheri953-sudo.github.io/Digital_Manufacturing_/quality.html">Quality</a>
+  <a href="https://panizmazaheri953-sudo.github.io/Digital_Manufacturing_/simulation.html">Simulation</a>
 </div>
-  
+
 <div class="container">
   
   <div class="intro">
@@ -218,10 +214,10 @@ body {
   
   <!-- DIMENSIONS SUMMARY -->
   <table class="spec-table">
-    <tr><th>Component</th><th>Height</th><th>Width</th><th>Depth</th><th>Wall Thickness</th></tr>
-    <tr><td><strong>Top Casing</strong></td><td>114 mm</td><td>60 mm</td><td>11.7 mm</td><td>Set in 3D printing</td></tr>
-    <tr><td><strong>Bottom Casing</strong></td><td>114 mm</td><td>60 mm</td><td>13 mm</td><td>Set in 3D printing</td></tr>
-   </table>
+    <tr><th>Component</th><th>Height</th><th>Width</th><th>Depth</th></tr>
+    <tr><td><strong>Top Casing</strong></strong></strong></strong></td><td>114 mm</strong></td><td>60 mm</strong></td><td>11.7 mm</strong></td></tr>
+    <tr><td><strong>Bottom Casing</strong></strong></strong></strong></td><td>114 mm</strong></td><td>60 mm</strong></td><td>13 mm</strong></td></tr>
+    </table>
   
   <!-- 2D CAD DRAWINGS SECTION -->
   <div class="section-title">
@@ -234,14 +230,14 @@ body {
       <h3>Top Casing</h3>
       <div class="subtitle">Reverse Engineered Drawing</div>
       <div class="image-frame">
-        <img src="YOUR_TOP_CASING_2D_DRAWING_URL" alt="Top Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>2D CAD Drawing - Top Casing<br>Upload image and replace URL</div>'">
+        <img src="YOUR_TOP_CASING_2D_DRAWING_URL" alt="Top Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\">2D CAD Drawing - Top Casing<br>Upload image and replace URL</div>'">
       </div>
-      <p>The top casing was reverse engineered from a physical part provided by Phones-R-Us. The drawing provided had several challenges that needed to be worked through.</p>
+      <p>The top casing drawing was provided by Phones-R-Us as a reference for reverse engineering. However, the drawing presented significant challenges that required careful analysis and problem-solving.</p>
       <div class="dimensions">
         <strong>Final Dimensions:</strong> 114mm (height) × 60mm (width) × 11.7mm (depth)
       </div>
       <div class="challenge">
-        <strong>Drawing Challenge:</strong> The top casing drawing had missing dimensions and confusing cross-sections. It was often unclear where exactly on the top casing each measurement applied. The solution was to calculate the missing values from other measurements available on the drawing, cross-referencing multiple views to determine the correct locations.
+        <strong>Drawing Challenges:</strong> The top casing drawing had multiple missing dimensions and confusing cross-sections that made interpretation difficult. A key issue was that it was often unclear where exactly on the top casing each measurement applied, as the drawing lacked clear reference points and datum indicators. Some dimensions were completely absent, while others were placed ambiguously on the drawing sheet. To resolve this, missing values were calculated by cross-referencing other known measurements on the drawing and using geometric relationships. Multiple views were compared to determine the correct locations for each dimension, and logical assumptions had to be made where information was incomplete.
       </div>
       <span class="badge">Fusion 360 Drawing</span>
     </div>
@@ -251,14 +247,14 @@ body {
       <h3>Bottom Casing</h3>
       <div class="subtitle">Client Drawing Translation</div>
       <div class="image-frame">
-        <img src="YOUR_BOTTOM_CASING_2D_DRAWING_URL" alt="Bottom Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>2D CAD Drawing - Bottom Casing<br>Upload image and replace URL</div>'">
+        <img src="YOUR_BOTTOM_CASING_2D_DRAWING_URL" alt="Bottom Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\">2D CAD Drawing - Bottom Casing<br>Upload image and replace URL</div>'">
       </div>
-      <p>The bottom casing was created directly from the client's engineering drawing. Unlike the top casing, this drawing was clear and complete, allowing for straightforward translation into CAD.</p>
+      <p>The bottom casing was created directly from the client's engineering drawing. Unlike the top casing, this drawing was clear and complete.</p>
       <div class="dimensions">
         <strong>Final Dimensions:</strong> 114mm (height) × 60mm (width) × 13mm (depth)
       </div>
       <div class="challenge">
-        <strong>✓ Drawing Status:</strong> The bottom drawing was clear with no major issues. All dimensions were properly labelled and cross-referenced correctly between views.
+        <strong>Drawing Status:</strong> The bottom drawing was clear and well-structured with no major issues. All dimensions were properly labelled, cross-referenced correctly between views, and had clear datum references. This allowed for straightforward and accurate translation into CAD with minimal interpretation required.
       </div>
       <span class="badge">Fusion 360 Drawing</span>
     </div>
@@ -275,9 +271,9 @@ body {
       <h3>Top Casing</h3>
       <div class="subtitle">3D Solid Model</div>
       <div class="image-frame">
-        <img src="https://github.com/panizmazaheri953-sudo/Digital-Manufacturing-/blob/main/Screenshot%202026-04-16%20at%2015.53.17.png?raw=true" alt="Top Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>3D CAD Model - Top Casing<br>Upload screenshot and replace URL</div>'">
+        <img src="https://github.com/panizmazaheri953-sudo/Digital-Manufacturing-/blob/main/Screenshot%202026-04-16%20at%2015.53.17.png?raw=true" alt="Top Casing 3D Model">
       </div>
-      <p>The 3D model was built in Fusion 360 using the reverse engineered dimensions. The top casing has a non-flat geometry, with depth varying across the part. Wall thickness parameters were defined during the 3D printing stage rather than in the CAD model.</p>
+      <p>The 3D model was built in Fusion 360 using the reverse engineered dimensions. The top casing features a non-flat geometry, with depth varying across the part. This required careful modelling of curved surfaces and transitions. The model was exported as an STL file for 3D printing.</p>
       <span class="badge">Fusion 360 | STL Exported</span>
     </div>
     
@@ -286,9 +282,9 @@ body {
       <h3>Bottom Casing</h3>
       <div class="subtitle">3D Solid Model</div>
       <div class="image-frame">
-        <img src="YOUR_BOTTOM_CASING_3D_URL" alt="Bottom Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>3D CAD Model - Bottom Casing<br>Upload screenshot and replace URL</div>'">
+        <img src="YOUR_BOTTOM_CASING_3D_URL" alt="Bottom Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\">3D CAD Model - Bottom Casing<br>Upload screenshot and replace URL</div>'">
       </div>
-      <p>The bottom casing 3D model was developed directly from the client drawing. With a consistent depth of 13mm and clear dimensions throughout, the modelling process was straightforward. The model was verified against the drawing at each stage.</p>
+      <p>The bottom casing 3D model was developed directly from the client drawing. With a consistent depth of 13mm and clear dimensions throughout, the modelling process was efficient. The model was verified against the drawing at each stage before STL export.</p>
       <span class="badge">Fusion 360 | STL Exported</span>
     </div>
   </div>
