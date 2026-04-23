@@ -54,7 +54,7 @@ body {
 }
 
 /* INTRO */
-  .intro {
+.intro {
   background: #0f2233;
   padding: 30px;
   border-radius: 15px;
@@ -63,13 +63,16 @@ body {
   font-size: 1.1rem; 
   line-height: 1.8;
 }
-}
 
-/* TABLE */
-  .spec-table {
-  width: 100%;
+/* TABLE - FULL WIDTH */
+.spec-table {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   border-collapse: collapse;
-  margin: 0 auto 40px;
   background: #0f1f2e;
 }
 
@@ -77,7 +80,6 @@ body {
   padding: 12px;
   text-align: center;
 }
-
 
 .spec-table th {
   background: #142c42;
@@ -140,7 +142,7 @@ body {
 .image-card p {
   line-height: 1.6;
   margin-bottom: 12px;
-   text-align: center;
+  text-align: center;
 }
 
 .badge {
@@ -194,10 +196,11 @@ body {
   </p>
 </div>
 
+<!-- FULL WIDTH TABLE -->
 <table class="spec-table">
-<tr><th>Component</th><th>Height</th><th>Width</th><th>Depth</th></tr>
-<tr><td>Top Casing</td><td>114 mm</td><td>60 mm</td><td>11.7 mm</td></tr>
-<tr><td>Bottom Casing</td><td>114 mm</td><td>60 mm</td><td>13 mm</td></tr>
+  <tr><th>Component</th><th>Height</th><th>Width</th><th>Depth</th></tr>
+  <tr><td>Top Casting</td><td>114 mm</td><td>60 mm</td><td>11.7 mm</td></tr>
+  <tr><td>Bottom Casing</td><td>114 mm</td><td>60 mm</td><td>13 mm</td></tr>
 </table>
 
 <div class="section-title"><h2>2D CAD Drawings</h2></div>
