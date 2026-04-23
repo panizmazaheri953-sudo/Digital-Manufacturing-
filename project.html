@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Project - Paniz Manufacturing</title>
+<title>Design - Paniz Manufacturing</title>
 <style>
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('https://raw.githubusercontent.com/panizmazaheri953-sudo/Digital_Manufacturing_/main/Screenshot%202026-04-16%20at%2013.32.07.png');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  background-color: #1a3a5c;
 }
 .header {
   background-color: rgba(44, 95, 138, 0.9);
@@ -33,39 +30,111 @@ body {
   text-decoration: underline;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 40px auto;
+  background: rgba(0, 0, 0, 0.75);
   padding: 40px;
+  border-radius: 15px;
   color: white;
+  text-align: center;
 }
 .container p {
   font-size: 18px;
   line-height: 1.6;
+  text-align: center;
 }
 h2 {
   color: white;
-  margin-top: 40px;
+  margin-top: 35px;
+  margin-bottom: 20px;
   border-bottom: 2px solid rgba(255,255,255,0.3);
   padding-bottom: 10px;
+  text-align: center;
 }
 h2:first-of-type {
   margin-top: 0;
+}
+h3 {
+  color: #ffd700;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
+  border-radius: 10px;
 }
 th, td {
   border: 1px solid rgba(255,255,255,0.3);
   padding: 12px;
-  text-align: left;
+  text-align: center;
 }
 th {
   background-color: rgba(44, 95, 138, 0.8);
   color: white;
+}
+.image-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+.image-card {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+.image-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.image-card p {
+  font-size: 15px;
+  margin: 10px 0;
+  text-align: center;
+}
+.image-card .dimensions {
+  background: rgba(44, 95, 138, 0.3);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+  text-align: center;
+}
+.image-card .challenge {
+  background: rgba(255, 100, 100, 0.15);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+  border-left: 3px solid #ff6666;
+  text-align: left;
+}
+.image-card .solution {
+  background: rgba(76, 175, 80, 0.15);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+  border-left: 3px solid #4CAF50;
+  text-align: left;
+}
+.badge {
+  display: inline-block;
+  background: rgba(44, 95, 138, 0.8);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-top: 10px;
 }
 .footer {
   background-color: rgba(26, 58, 92, 0.9);
@@ -80,7 +149,7 @@ th {
 
 <div class="header">
   <h1>Paniz Manufacturing Company</h1>
-  <p>Phones-R-Us Project - Final Report</p>
+  <p>CAD Design & Reverse Engineering | Autodesk Fusion 360</p>
 </div>
 
 <div class="nav">
@@ -94,83 +163,78 @@ th {
 
 <div class="container">
   
-  <h2>Executive Summary</h2>
-  <p>Paniz Manufacturing Company successfully delivered top and bottom casings for Phones-R-Us modular mobile devices. The project achieved all key requirements including interchangeability with existing supplier components, seamless integration with the FESTO CP Lab assembly line, and demonstrated capability for 50,000 units per annum production.</p>
+  <h2>Design Overview</h2>
+  <p>The Phones-R-Us project required the development of two precision casings for their modular mobile device. The bottom casing was modelled directly from a detailed client drawing provided by Phones-R-Us, which included all necessary dimensions, tolerances, and geometric specifications. This drawing was clear and well-structured, allowing for straightforward translation into CAD with minimal interpretation required.</p>
   
-  <h2>Project Requirements - Final Status</h2>
+  <p>The top casing presented a different challenge, as it required complete reverse engineering from a physical sample part. Unlike the bottom casing, no formal drawing existed for the top casing initially. A reference drawing was provided, but it had significant limitations that required careful analysis and problem-solving to overcome. Both components were designed in Autodesk Fusion 360, a professional CAD software that enabled precise modelling of complex geometries, including the curved surfaces and non-uniform depth of the top casing.</p>
+  
+  <p>The design process involved multiple iterations to ensure proper fit between the two casings, as well as compatibility with existing components from other suppliers. The final designs were exported as STL files, the industry-standard format for additive manufacturing, ready for the 3D printing phase of the project.</p>
+  
+  <!-- DIMENSIONS TABLE -->
+  <h2>Final Dimensions</h2>
   <table>
-    <tr><th>Requirement</th><th>Specification</th><th>Status</th><th>Evidence</th></tr>
-    <tr><td>Bottom casing</td><td>Drawing provided, match exactly</td><td style="color: #90EE90">✓ Achieved</td><td>Metrology report</td></tr>
-    <tr><td>Top casing</td><td>Reverse engineer from existing part</td><td style="color: #90EE90">✓ Achieved</td><td>CAD model</td></tr>
-    <tr><td>Interchangeability</td><td>Fit with "master" casings from other supplier</td><td style="color: #90EE90">✓ Achieved</td><td>Assembly test</td></tr>
-    <tr><td>Assembly line</td><td>Flow through FESTO CP Lab without jamming</td><td style="color: #90EE90">✓ Achieved</td><td>Video evidence</td></tr>
-    <tr><td>Production target</td><td>50,000 units per annum</td><td style="color: #90EE90">✓ Achieved</td><td>Plant simulation</td></tr>
-    <tr><td>Timeline</td><td>9-week prototype delivery</td><td style="color: #90EE90">✓ Achieved</td><td>Delivered Week 9</td></tr>
-  </table>
+    <tr><th>Component</th><th>Height (mm)</th><th>Width (mm)</th><th>Depth (mm)</th></tr>
+    <tr><td><strong>Top Casing</strong></strong></strong></strong></td><td>114</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>^<div class="dimensions"><strong>Dimensions:</strong> 114mm × 60mm × 11.7mm</div>
+      <div class="challenge">
+        <strong>⚠️ Drawing Challenges:</strong> The top casing drawing provided by Phones-R-Us had multiple missing dimensions and confusing cross-sections that made accurate interpretation difficult. A key issue was that it was often unclear where exactly on the top casing each measurement applied, as the drawing lacked clear reference points and datum indicators. Some critical dimensions were completely absent from the drawing, while others were placed ambiguously on the drawing sheet with unclear leaders pointing to uncertain locations. The cross-sections provided did not always align with the main views, creating further confusion about which features corresponded to which measurements.
+      </div>
+      <div class="solution">
+        <strong>✓ Solution Approach:</strong> Missing values were systematically calculated by cross-referencing other known measurements on the drawing and using geometric relationships between features. Multiple views (front, top, side, and isometric) were compared to determine the correct locations for each ambiguous dimension. Logical assumptions had to be made where information was incomplete, and these assumptions were validated through test prints and fit checks with the bottom casing. This methodical approach resulted in an accurate CAD model despite the drawing's limitations.
+      </div>
+      <span class="badge">Reverse Engineered Drawing</span>
+    </div>
+    
+    <!-- Bottom Casing 2D Drawing -->
+    <div class="image-card">
+      <h3>Bottom Casing - 2D Drawing</h3>
+      <img src="YOUR_BOTTOM_CASING_2D_DRAWING_URL" alt="Bottom Casing 2D Drawing" onerror="this.style.display='none'; this.parentElement.innerHTML='<p style=\'color:#888\'>2D CAD Drawing - Bottom Casing<br>Upload image and replace URL</p>'">
+      <div class="dimensions"><strong>Dimensions:</strong> 114mm × 60mm × 13mm</div>
+      <div class="challenge">
+        <strong>⚠️ Drawing Challenges:</strong> The bottom casing drawing presented a different type of challenge. While the drawing itself was clear and complete, the challenge was ensuring that the modelled geometry would properly interface with the top casing and with components from other suppliers. The drawing specified standard tolerances of ±0.1mm, but achieving this consistently across multiple prints required careful consideration of the FDM process capabilities. Additionally, some internal features required supports during printing, which affected surface finish in critical mating areas.
+      </div>
+      <div class="solution">
+        <strong>✓ Solution Approach:</strong> The drawing was first translated directly into CAD with high fidelity to the dimensions. For internal features requiring supports, the orientation of the part during printing was optimized to minimize support material in critical areas. Post-processing procedures were developed to clean support interfaces without affecting dimensional accuracy. The model was then validated against the drawing at each stage, and test prints were used to verify fit with the top casing before proceeding to full production.
+      </div>
+      <span class="badge">Client Drawing</span>
+    </div>
+  </div>
   
-  <h2>Final Manufacturing Process</h2>
-  <p>After multiple trials, the following FDM parameters were selected for production:</p>
-  <table>
-    <tr><th>Parameter</th><th>Final Value</th><th>Justification</th></tr>
-    <tr><td>Printer</td><td>UltiMaker S5</td><td>Best dimensional stability</td></tr>
-    <tr><td>Material</td><td>PETG</td><td>Balance of strength and accuracy</td></tr>
-    <tr><td>Layer height</td><td>0.15mm</td><td>Optimized for surface finish vs speed</td></tr>
-    <tr><td>Nozzle temperature</td><td>235°C</td><td>Optimal flow consistency</td></tr>
-    <tr><td>Bed temperature</td><td>70°C</td><td>Eliminated warping</td></tr>
-    <tr><td>Print speed</td><td>45mm/s</td><td>Best tolerance results</td></tr>
-    <tr><td>Infill</td><td>40%</td><td>Structural integrity</td></tr>
-  </table>
+  <h2>Fusion 360 3D Models</h2>
   
-  <h2>Final Dimensional Results</h2>
-  <table>
-    <tr><th>Dimension</th><th>Target (mm)</th><th>Final Average (mm)</th><th>Tolerance Achieved</th><th>Status</th></tr>
-    <tr><td>Width</td><td>75.00</td><td>75.02</td><td>±0.02</td><td style="color: #90EE90">Pass</td></tr>
-    <tr><td>Height</td><td>150.00</td><td>149.98</td><td>±0.02</td><td style="color: #90EE90">Pass</td></tr>
-    <tr><td>Depth</td><td>8.50</td><td>8.52</td><td>±0.02</td><td style="color: #90EE90">Pass</td></tr>
-    <tr><td>Hole position 1</td><td>25.00</td><td>24.99</td><td>±0.01</td><td style="color: #90EE90">Pass</td></tr>
-    <tr><td>Hole position 2</td><td>125.00</td><td>125.01</td><td>±0.01</td><td style="color: #90EE90">Pass</td></tr>
-  </table>
+  <div class="image-grid">
+    <!-- Top Casing 3D Model -->
+    <div class="image-card">
+      <h3>Top Casing - 3D Model</h3>
+      <img src="https://github.com/panizmazaheri953-sudo/Digital-Manufacturing-/blob/main/Screenshot%202026-04-16%20at%2015.53.17.png?raw=true" alt="Top Casing 3D Model">
+      <p>The top casing 3D model was built in Fusion 360 using the reverse engineered dimensions. Key challenges included modelling the non-flat geometry with varying depth across the part, creating smooth transitions between different depth zones, and designing snap-fit features that would engage reliably with the bottom casing. The model required three iterations to achieve proper fit.</p>
+      <div class="challenge" style="margin-top: 10px;">
+        <strong>Modelling Challenge:</strong> The top casing had curved surfaces that were difficult to measure accurately from the physical sample. The drawing lacked curvature radii information.
+      </div>
+      <div class="solution">
+        <strong>Solution:</strong> Curvature was approximated using spline profiles in Fusion 360, then refined through test prints until the fit with the bottom casing was seamless.
+      </div>
+      <span class="badge">STL Exported</span>
+    </div>
+    
+    <!-- Bottom Casing 3D Model -->
+    <div class="image-card">
+      <h3>Bottom Casing - 3D Model</h3>
+      <img src="YOUR_BOTTOM_CASING_3D_URL" alt="Bottom Casing 3D Model" onerror="this.style.display='none'; this.parentElement.innerHTML='<p style=\'color:#888\'>3D CAD Model - Bottom Casing<br>Upload screenshot and replace URL</p>'">
+      <p>The bottom casing 3D model was developed directly from the client drawing. The consistent depth of 13mm made modelling straightforward. Key features included the battery compartment, mounting bosses, alignment ribs, and the outer profile. The model was verified against the drawing before STL export.</p>
+      <div class="challenge" style="margin-top: 10px;">
+        <strong>Modelling Challenge:</strong> Some internal corners were specified with sharp radii that would be difficult to achieve with FDM printing without supports.
+      </div>
+      <div class="solution">
+        <strong>Solution:</strong> Sharp internal corners were redesigned with 1mm fillets after confirming with the client that this would not affect component fit. This improved printability without compromising function.
+      </div>
+      <span class="badge">STL Exported</span>
+    </div>
+  </div>
   
-  <h2>Process Capability (Cpk)</h2>
-  <table>
-    <tr><th>Dimension</th><th>Cp</th><th>Cpk</th><th>Assessment</th></tr>
-    <tr><td>Width</td><td>1.67</td><td>1.55</td><td style="color: #90EE90">Capable</td></tr>
-    <tr><td>Height</td><td>1.72</td><td>1.60</td><td style="color: #90EE90">Capable</td></tr>
-    <tr><td>Depth</td><td>1.58</td><td>1.48</td><td style="color: #90EE90">Capable</td></tr>
-  </table>
-  
-  <h2>FESTO CP Lab Assembly Results</h2>
-  <table>
-    <tr><th>Station</th><th>Operation</th><th>Pass Rate</th><th>Notes</th></tr>
-    <tr><td>1</td><td>Loading / Transfer</td><td>100%</td><td>No issues</td></tr>
-    <tr><td>2</td><td>Alignment verification</td><td>99.5%</td><td>Minor adjustment needed</td></tr>
-    <tr><td>3</td><td>Component addition</td><td>100%</td><td>Seamless fit</td></tr>
-    <tr><td>4</td><td>Pressing</td><td>99%</td><td>Critical station - passed</td></tr>
-    <tr><td>5</td><td>Curing phase</td><td>100%</td><td>Consistent</td></td>
-    <tr><td>6</td><td>Robotic collection</td><td>100%</td><td>No jamming</td></tr>
-  </table>
-  
-  <h2>Production Capacity</h2>
-  <p><strong>Target:</strong> 50,000 units per year</p>
-  <p><strong>Achieved:</strong> 52,000 units per year (104% of target)</p>
-  <p><strong>Required printers:</strong> 4 x UltiMaker S5 running 2 shifts</p>
-  <p><strong>Cycle time achieved:</strong> 138 seconds per unit (target: 144 seconds)</p>
-  
-  <h2>Lessons Learned & Recommendations</h2>
-  <ul>
-    <li><strong>Process stability:</strong> FDM with PETG provides consistent results after proper calibration</li>
-    <li><strong>Supplier variability:</strong> Regular communication and shared metrology data improves interchangeability</li>
-    <li><strong>Assembly integration:</strong> Early testing on FESTO line identified tolerance issues before production</li>
-    <li><strong>Scaling recommendation:</strong> Add 1 backup printer to maintain 50k capacity during maintenance</li>
-  </ul>
-  
-  <h2>Conclusion</h2>
-  <p>The Phones-R-Us project was completed successfully within the 9-week timeline. All casings meet dimensional requirements, pass FESTO CP Lab assembly validation, and are fully interchangeable with existing supplier components. Production capacity of 50,000 units per annum is achievable with the recommended printer configuration.</p>
-
 </div>
 
 <div class="footer">
-  <p>Paniz Manufacturing Company | Digital Manufacturing Portfolio | Project Completed Successfully</p>
+  <p>Paniz Manufacturing Company | Autodesk Fusion 360 | Reverse Engineering & Precision CAD | STL Files Ready for 3D Printing</p>
 </div>
 
 </body>
