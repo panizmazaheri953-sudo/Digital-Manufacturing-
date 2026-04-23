@@ -2,616 +2,602 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PFMEA | Paniz Manufacturing</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(rgba(5,10,15,0.6), rgba(5,10,15,0.7)),
-              url('https://github.com/panizmazaheri953-sudo/Digital-Manufacturing-/blob/main/Screenshot%202026-04-16%20at%2013.32.07.png?raw=true');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  color: #eaeaea;
-}
-
-.header {
-  text-align: center;
-  padding: 60px 20px 40px;
-  background: linear-gradient(135deg, #10273a, #08141f);
-}
-
-.header h1 { margin: 0; font-size: 2.8rem; }
-.header p { margin-top: 10px; color: #cfcfcf; }
-
-.nav {
-  position: sticky;
-  top: 0;
-  background: #0b1a26;
-  text-align: center;
-  padding: 12px;
-}
-
-.nav a {
-  color: #eaeaea;
-  text-decoration: none;
-  margin: 0 18px;
-  transition: 0.3s;
-}
-
-.nav a:hover { color: #ffd700; }
-
-.container {
-  max-width: 1600px;
-  margin: auto;
-  padding: 30px 20px;
-  overflow-x: auto;
-}
-
-.section-title {
-  text-align: center;
-  margin: 40px 0 20px;
-}
-
-.section-title h2 {
-  display: inline-block;
-  border-bottom: 3px solid #ffd700;
-  padding-bottom: 8px;
-}
-
-.intro-block {
-  background: #0f2233;
-  padding: 30px;
-  border-radius: 15px;
-  margin-bottom: 30px;
-  border-left: 5px solid #ffd700;
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.intro-block p { margin: 10px 0; }
-.intro-block ul { text-align: left; }
-
-.reference {
-  background: #0a1a28;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px 0;
-  font-size: 0.9rem;
-  border-left: 3px solid #ffd700;
-}
-
-.reference a { color: #ffd700; text-decoration: none; }
-.reference a:hover { text-decoration: underline; }
-
-/* Professional PFMEA Table */
-.pfmea-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  background: #0f1f2e;
-  font-size: 0.75rem;
-}
-
-.pfmea-table th, .pfmea-table td {
-  border: 1px solid rgba(255,215,0,0.3);
-  padding: 8px 6px;
-  text-align: center;
-  vertical-align: top;
-}
-
-.pfmea-table th {
-  background: #142c42;
-  color: #ffd700;
-  font-weight: bold;
-  font-size: 0.7rem;
-}
-
-.pfmea-table td {
-  color: #eaeaea;
-}
-
-.pfmea-table .process-step {
-  background: rgba(20, 44, 66, 0.5);
-  font-weight: bold;
-}
-
-.success-row {
-  background: rgba(100, 255, 100, 0.1);
-}
-
-.capacity-box {
-  background: #0f2233;
-  padding: 25px;
-  border-radius: 15px;
-  margin: 30px 0;
-  text-align: center;
-  border: 1px solid #ffd700;
-}
-
-.capacity-box h3 { color: #ffd700; margin-top: 0; }
-.capacity-box table { margin: 15px auto; width: 100%; border-collapse: collapse; }
-.capacity-box th, .capacity-box td { padding: 10px; text-align: center; border: 1px solid rgba(255,215,0,0.3); }
-.capacity-box th { background: #142c42; }
-
-.footer {
-  text-align: center;
-  padding: 25px;
-  margin-top: 40px;
-  background: #08141f;
-}
-
-.scale-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 15px 0;
-  background: #0f1f2e;
-  font-size: 0.75rem;
-}
-
-.scale-table th, .scale-table td {
-  border: 1px solid rgba(255,215,0,0.2);
-  padding: 6px;
-  text-align: left;
-}
-
-.scale-table th {
-  background: #1a3a4a;
-  color: #ffd700;
-}
+  :root {
+    --gold: #ffd700;
+    --gold-dim: rgba(255,215,0,0.12);
+    --gold-border: rgba(255,215,0,0.22);
+    --dark: #070e16;
+    --dark-2: #0b1826;
+    --dark-3: #0f2035;
+    --text: #eaeaea;
+    --text-muted: rgba(234,234,234,0.5);
+    --text-faint: rgba(234,234,234,0.25);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(rgba(5,10,15,0.6), rgba(5,10,15,0.7)),
+      url('https://github.com/panizmazaheri953-sudo/Digital-Manufacturing-/blob/main/Screenshot%202026-04-16%20at%2013.32.07.png?raw=true');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--dark); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-border); border-radius: 2px; }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,215,0,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,215,0,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none; z-index: 0;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 60px;
+    background: rgba(7,14,22,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gold-border);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 18px; letter-spacing: 1px;
+    color: var(--gold); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2px; list-style: none; }
+  .nav-links a {
+    font-size: 12.5px; font-weight: 400; color: var(--text-muted);
+    text-decoration: none; padding: 6px 14px; border-radius: 6px;
+    border: 1px solid transparent; transition: all 0.2s; letter-spacing: 0.3px;
+  }
+  .nav-links a:hover { color: var(--text); background: rgba(255,215,0,0.06); border-color: var(--gold-border); }
+  .nav-links a.active { color: var(--gold); background: var(--gold-dim); border-color: var(--gold-border); }
+  .hero {
+    position: relative; z-index: 1;
+    padding: 80px 40px 60px; text-align: center; overflow: hidden;
+  }
+  .hero::after {
+    content: ''; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(ellipse at center, rgba(255,215,0,0.05) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold-dim); border: 1px solid var(--gold-border);
+    border-radius: 100px; padding: 6px 20px;
+    font-size: 10.5px; font-weight: 500; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .eyebrow-dot { width:6px; height:6px; background:var(--gold); border-radius:50%; animation: pulse 2s ease infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 600; line-height: 0.95; letter-spacing: -1px;
+    color: #fff; margin-bottom: 12px; animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 span { color: var(--gold); display: block; font-style: italic; font-weight: 400; }
+  .hero-sub {
+    font-size: 12px; color: var(--text-muted); letter-spacing: 4px;
+    text-transform: uppercase; font-weight: 300; margin-bottom: 44px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-stats {
+    display: inline-flex; gap: 1px;
+    background: var(--gold-border); border: 1px solid var(--gold-border);
+    border-radius: 14px; overflow: hidden; animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .hero-stat { padding: 20px 32px; background: var(--dark-2); text-align: center; transition: background 0.2s; }
+  .hero-stat:hover { background: var(--dark-3); }
+  .hero-stat-val { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:600; color:var(--gold); line-height:1; margin-bottom:5px; }
+  .hero-stat-lbl { font-size:10px; color:var(--text-faint); text-transform:uppercase; letter-spacing:2px; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+  .divider {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 16px;
+    padding: 0 40px; margin: 0 0 48px;
+  }
+  .divider-line { flex:1; height:1px; background:var(--gold-border); }
+  .divider-label { font-size:10.5px; font-weight:500; letter-spacing:3.5px; text-transform:uppercase; color:var(--gold); white-space:nowrap; }
+  main { position:relative; z-index:1; max-width:1600px; margin:0 auto; padding:0 40px 80px; }
+  .section-title {
+    font-size:10.5px; font-weight:600; letter-spacing:3.5px;
+    text-transform:uppercase; color:var(--gold); margin-bottom:20px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .section-title::after { content:''; flex:1; height:1px; background:var(--gold-border); }
+  .intro-block {
+    background: var(--dark-2); border: 1px solid var(--gold-border);
+    border-left: 4px solid var(--gold); border-radius: 16px;
+    padding: 32px; margin-bottom: 32px; transition: border-color 0.25s;
+  }
+  .intro-block:hover { border-color: rgba(255,215,0,0.5); border-left-color: var(--gold); }
+  .intro-block h3, .intro-block h4 {
+    font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600;
+    color:var(--gold); margin-bottom:14px;
+  }
+  .intro-block p { font-size:14px; line-height:1.8; color:var(--text-muted); font-weight:300; margin:8px 0; }
+  .intro-block strong { color:var(--text); font-weight:500; }
+  .intro-block ul { padding-left:20px; margin:10px 0; }
+  .intro-block ul li { font-size:14px; line-height:1.8; color:var(--text-muted); font-weight:300; margin-bottom:4px; }
+  .table-wrap { overflow-x:auto; margin-bottom:48px; }
+  .pfmea-table {
+    width:100%; border-collapse:collapse; background:var(--dark-2);
+    font-size:0.72rem; border:1px solid var(--gold-border); border-radius:12px; overflow:hidden;
+  }
+  .pfmea-table th, .pfmea-table td {
+    border:1px solid rgba(255,215,0,0.15); padding:9px 7px;
+    text-align:center; vertical-align:top;
+  }
+  .pfmea-table th { background:#0f2035; color:var(--gold); font-weight:600; font-size:0.68rem; letter-spacing:0.5px; }
+  .pfmea-table td { color:var(--text-muted); }
+  .pfmea-table .process-step { background:rgba(15,32,53,0.6); font-weight:500; color:var(--text); }
+  .rpn-high { background:rgba(255,80,80,0.18)!important; color:#ff9999!important; font-weight:600; }
+  .rpn-med  { background:rgba(255,165,0,0.12)!important; color:#ffcc80!important; font-weight:600; }
+  .rpn-low  { background:rgba(80,255,120,0.12)!important; color:#a0ffb0!important; font-weight:600; }
+  .success-row td { color:rgba(180,255,180,0.75); }
+  .success-row { background:rgba(60,180,60,0.05); }
+  .capacity-box {
+    background:var(--dark-2); border:1px solid var(--gold-border);
+    border-radius:16px; padding:32px; margin-bottom:40px; text-align:center;
+  }
+  .capacity-box h3 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--gold); margin-bottom:14px; }
+  .capacity-box p { font-size:14px; color:var(--text-muted); margin:6px 0; font-weight:300; }
+  .capacity-box strong { color:var(--text); font-weight:500; }
+  .cap-table { width:100%; border-collapse:collapse; margin:20px 0; }
+  .cap-table th, .cap-table td { padding:10px 14px; text-align:center; border:1px solid rgba(255,215,0,0.15); font-size:13px; }
+  .cap-table th { background:var(--dark-3); color:var(--gold); font-weight:600; letter-spacing:0.5px; }
+  .cap-table td { color:var(--text-muted); }
+  .cap-table tr:nth-child(4) { background:rgba(255,215,0,0.08); }
+  .cap-table tr:nth-child(4) td { color:var(--text); font-weight:500; }
+  .scale-table {
+    width:100%; border-collapse:collapse; background:var(--dark-2);
+    font-size:0.78rem; border:1px solid var(--gold-border);
+    border-radius:12px; overflow:hidden; margin-bottom:32px;
+  }
+  .scale-table th, .scale-table td { border:1px solid rgba(255,215,0,0.12); padding:8px 12px; text-align:left; }
+  .scale-table th { background:var(--dark-3); color:var(--gold); font-weight:600; letter-spacing:0.5px; }
+  .scale-table td { color:var(--text-muted); }
+  .scale-table tr:hover td { background:rgba(255,215,0,0.03); color:var(--text); }
+  .reference {
+    background:var(--dark-2); border:1px solid var(--gold-border);
+    border-left:4px solid var(--gold); border-radius:16px;
+    padding:28px; margin:28px 0; font-size:13px;
+  }
+  .reference h4 { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; color:var(--gold); margin-bottom:14px; }
+  .reference p { color:var(--text-muted); margin:8px 0; line-height:1.7; font-weight:300; }
+  .reference strong { color:var(--text); font-weight:500; }
+  .reference em { font-style:italic; }
+  .reference a { color:var(--gold); text-decoration:none; }
+  .reference a:hover { text-decoration:underline; }
+  footer {
+    position:relative; z-index:1;
+    border-top:1px solid var(--gold-border); background:var(--dark-2);
+    padding:32px 40px; display:flex; align-items:center; justify-content:space-between;
+  }
+  .footer-brand { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:18px; color:var(--gold); letter-spacing:0.5px; }
+  .footer-sub { font-size:11px; color:var(--text-faint); margin-top:4px; letter-spacing:2px; text-transform:uppercase; font-weight:400; }
+  .footer-links { display:flex; gap:24px; }
+  .footer-links a { font-size:12px; color:var(--text-faint); text-decoration:none; letter-spacing:0.5px; transition:color 0.2s; }
+  .footer-links a:hover { color:var(--gold); }
+  @media(max-width:768px){
+    nav{padding:0 20px}
+    .nav-links{display:none}
+    .hero{padding:50px 20px 40px}
+    .hero-stats{flex-direction:column;gap:1px}
+    main{padding:0 16px 60px}
+    .divider{padding:0 16px}
+    footer{flex-direction:column;gap:16px;text-align:center}
+  }
 </style>
 </head>
-
 <body>
 
-<div class="header">
-  <h1>Paniz Manufacturing Company</h1>
-  <p>Process Failure Mode & Effects Analysis (PFMEA) | Phones-R-Us Project</p>
-</div>
-
-<div class="nav">
-  <a href="index.html">Home</a>
-  <a href="project.html">Project</a>
-  <a href="design.html">Design</a>
-  <a href="pfmea.html">PFMEA</a>
-  <a href="printing.html">3D Printing</a>
-  <a href="quality.html">Quality</a>
-  <a href="simulation.html">Simulation</a>
-</div>
-
-<div class="container">
-
-<div class="intro-block">
-  <h3 style="color:#ffd700;">What is PFMEA?</h3>
-  <p><strong>Process Failure Mode and Effects Analysis (PFMEA)</strong> is a systematic method for identifying potential failures in a manufacturing process and prioritising actions to prevent them. For the Phones-R-Us project, PFMEA was used to analyse the 3D printing process and FESTO CP Lab assembly line.</p>
-  
-  <p><strong>The main goals of FMEA are:</strong></p>
-  <ul>
-    <li>Identify critical components to ensure quality of production</li>
-    <li>Identify possible failures early to ensure production functions</li>
-    <li>Estimate risks before they occur</li>
-    <li>Reduce or remove cost of changes after mass production starts</li>
-    <li>Support continuous improvement</li>
+<nav>
+  <a class="nav-logo" href="index.html">Paniz Mfg.</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="project.html">Project</a></li>
+    <li><a href="design.html">Design</a></li>
+    <li><a href="pfmea.html" class="active">PFMEA</a></li>
+    <li><a href="printing.html">3D Printing</a></li>
+    <li><a href="quality.html">Quality</a></li>
+    <li><a href="simulation.html">Simulation</a></li>
   </ul>
-  
-  <p>The <strong>Risk Priority Number (RPN)</strong> is calculated as: <strong style="color:#ffd700;">RPN = Severity × Occurrence × Detection</strong></p>
-  <p>This PFMEA is based on <strong>actual manufacturing data</strong> from the Phones-R-Us project, comparing two different 3D printing platforms: <strong>Ultimaker S3/S5 Extended</strong> (initial trials) and <strong>Bambu Lab P1S</strong> (final production).</p>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="eyebrow-dot"></span>
+    Process Failure Mode &amp; Effects Analysis
+  </div>
+  <h1>Paniz <span>PFMEA</span></h1>
+  <p class="hero-sub">Phones-R-Us Project · Risk Analysis &amp; Control</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-val">288</div>
+      <div class="hero-stat-lbl">Peak RPN (Before)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">64</div>
+      <div class="hero-stat-lbl">Peak RPN (After)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">80%</div>
+      <div class="hero-stat-lbl">Success Rate</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">25</div>
+      <div class="hero-stat-lbl">Printers Needed</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-label">What is PFMEA?</span>
+  <div class="divider-line"></div>
 </div>
 
-<!-- PROFESSIONAL PFMEA TABLE -->
-<div class="section-title"><h2>PFMEA: Phones-R-Us Manufacturing Process</h2></div>
+<main>
 
-<table class="pfmea-table">
-  <thead>
-    <tr>
-      <th rowspan="2">Line</th>
-      <th rowspan="2">Opr #</th>
-      <th rowspan="2">Process Function</th>
-      <th rowspan="2">Potential Failure Mode</th>
-      <th rowspan="2">Potential Effects of Failure</th>
-      <th rowspan="2">Sev</th>
-      <th rowspan="2">Class</th>
-      <th rowspan="2">Potential Cause(s)</th>
-      <th rowspan="2">Occ</th>
-      <th colspan="2">Current Process Controls</th>
-      <th rowspan="2">Det</th>
-      <th rowspan="2">RPN</th>
-      <th rowspan="2">Recommended Actions</th>
-      <th rowspan="2">Responsible & Target</th>
-      <th colspan="3">Actions Taken</th>
-      <th colspan="3">RPN After Action</th>
-    </tr>
-    <tr>
-      <th>Prevention</th><th>Detection</th>
-      <th>Sev</th><th>Occ</th><th>Det</th>
-      <th>Sev</th><th>Occ</th><th>Det</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Row 1: Ultimaker 3D Printing -->
-    <tr>
-      <td rowspan="4">10</td>
-      <td rowspan="4">10</td>
-      <td rowspan="4">3D Printing (Ultimaker S3/S5)</td>
-      <td>Depth measurement out of spec (1.18mm vs 1.6-2.2mm)</td>
-      <td>Fails FESTO laser measurement station</td>
-      <td>8</td>
-      <td>Critical</td>
-      <td>Poor dimensional accuracy from Ultimaker calibration</td>
-      <td>9</td>
-      <td>Printer calibration</td>
-      <td>Visual inspection</td>
-      <td>4</td>
-      <td style="background: rgba(255,100,100,0.3);">288</td>
-      <td>Switch to Bambu P1S printer</td>
-      <td>Production team / Week 4</td>
-      <td>Switched to Bambu P1S</td>
-      <td>8</td>
-      <td>2</td>
-      <td>4</td>
-      <td style="background: rgba(100,255,100,0.3);">64</td>
-    </tr>
-    <tr>
-      <td>Layer shifting</td>
-      <td>Misaligned geometry; gaps; casing won't shut</td>
-      <td>7</td>
-      <td>Major</td>
-      <td>Loose belts; print speed too high</td>
-      <td>7</td>
-      <td>Maintenance schedule</td>
-      <td>Operator inspection</td>
-      <td>5</td>
-      <td style="background: rgba(255,100,100,0.2);">245</td>
-      <td>Regular belt tensioning; reduce speed</td>
-      <td>Maintenance / Week 2</td>
-      <td>Bambu auto-calibration resolved</td>
-      <td>7</td>
-      <td>2</td>
-      <td>3</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <td>Clogging / extrusion issues</td>
-      <td>Incomplete print; wasted material</td>
-      <td>6</td>
-      <td>Major</td>
-      <td>Filament quality; nozzle temperature</td>
-      <td>8</td>
-      <td>Filament storage</td>
-      <td>Printer error alert</td>
-      <td>6</td>
-      <td style="background: rgba(255,100,100,0.2);">288</td>
-      <td>Use Bambu hardened nozzle; proper storage</td>
-      <td>Production / Week 2</td>
-      <td>Upgraded to Bambu P1S</td>
-      <td>6</td>
-      <td>2</td>
-      <td>4</td>
-      <td>48</td>
-    </tr>
-    <tr>
-      <td>Support material hard to remove</td>
-      <td>Damaged part; rough surface finish</td>
-      <td>4</td>
-      <td>Minor</td>
-      <td>PLA supports too strong; poor interface</td>
-      <td>6</td>
-      <td>Slicer settings</td>
-      <td>Manual inspection</td>
-      <td>6</td>
-      <td>144</td>
-      <td>Adjust support Z-distance</td>
-      <td>Design / Week 3</td>
-      <td>Bambu interface layer solved</td>
-      <td>4</td>
-      <td>2</td>
-      <td>3</td>
-      <td>24</td>
-    </tr>
+  <div class="intro-block">
+    <h3>What is PFMEA?</h3>
+    <p><strong>Process Failure Mode and Effects Analysis (PFMEA)</strong> is a systematic method for identifying potential failures in a manufacturing process and prioritising actions to prevent them. For the Phones-R-Us project, PFMEA was used to analyse the 3D printing process and FESTO CP Lab assembly line.</p>
+    <p><strong>The main goals of FMEA are:</strong></p>
+    <ul>
+      <li>Identify critical components to ensure quality of production</li>
+      <li>Identify possible failures early to ensure production functions</li>
+      <li>Estimate risks before they occur</li>
+      <li>Reduce or remove cost of changes after mass production starts</li>
+      <li>Support continuous improvement</li>
+    </ul>
+    <p>The <strong>Risk Priority Number (RPN)</strong> is calculated as: <strong style="color:var(--gold);">RPN = Severity × Occurrence × Detection</strong></p>
+    <p>This PFMEA is based on <strong>actual manufacturing data</strong> from the Phones-R-Us project, comparing two different 3D printing platforms: <strong>Ultimaker S3/S5 Extended</strong> (initial trials) and <strong>Bambu Lab P1S</strong> (final production).</p>
+  </div>
 
-    <!-- Row: Bambu 3D Printing -->
-    <tr class="success-row">
-      <td>20</td>
-      <td>20</td>
-      <td>3D Printing (Bambu P1S)</td>
-      <td>File interruption / USB error</td>
-      <td>Print stops mid-way; wasted material</td>
-      <td>4</td>
-      <td>Minor</td>
-      <td>Flash drive corruption</td>
-      <td>2</td>
-      <td>Quality USB</td>
-      <td>Printer alert</td>
-      <td>7</td>
-      <td>56</td>
-      <td>Use network/cloud printing</td>
-      <td>IT / Week 2</td>
-      <td>Eliminated USB, use cloud</td>
-      <td>4</td>
-      <td>1</td>
-      <td>3</td>
-      <td>12</td>
-    </tr>
-    <tr class="success-row">
-      <td>20</td>
-      <td>20</td>
-      <td>3D Printing (Bambu P1S)</td>
-      <td>Slight dimensional variation</td>
-      <td>Imperfect fit but passes inspection</td>
-      <td>5</td>
-      <td>Minor</td>
-      <td>Normal process variation</td>
-      <td>2</td>
-      <td>Auto-calibration</td>
-      <td>FESTO laser station</td>
-      <td>4</td>
-      <td>40</td>
-      <td>Accept within tolerance</td>
-      <td>Quality / Week 4</td>
-      <td>80% success rate achieved</td>
-      <td>5</td>
-      <td>2</td>
-      <td>4</td>
-      <td>40</td>
-    </tr>
+  <div class="section-title">PFMEA: Phones-R-Us Manufacturing Process</div>
+  <div class="table-wrap">
+    <table class="pfmea-table">
+      <thead>
+        <tr>
+          <th rowspan="2">Line</th>
+          <th rowspan="2">Opr #</th>
+          <th rowspan="2">Process Function</th>
+          <th rowspan="2">Potential Failure Mode</th>
+          <th rowspan="2">Potential Effects of Failure</th>
+          <th rowspan="2">Sev</th>
+          <th rowspan="2">Class</th>
+          <th rowspan="2">Potential Cause(s)</th>
+          <th rowspan="2">Occ</th>
+          <th colspan="2">Current Process Controls</th>
+          <th rowspan="2">Det</th>
+          <th rowspan="2">RPN</th>
+          <th rowspan="2">Recommended Actions</th>
+          <th rowspan="2">Responsible &amp; Target</th>
+          <th colspan="3">Actions Taken</th>
+          <th colspan="3">RPN After Action</th>
+        </tr>
+        <tr>
+          <th>Prevention</th><th>Detection</th>
+          <th>Sev</th><th>Occ</th><th>Det</th>
+          <th>Sev</th><th>Occ</th><th>Det</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="4" class="process-step">10</td>
+          <td rowspan="4" class="process-step">10</td>
+          <td rowspan="4" class="process-step">3D Printing (Ultimaker S3/S5)</td>
+          <td>Depth measurement out of spec (1.18mm vs 1.6-2.2mm)</td>
+          <td>Fails FESTO laser measurement station</td>
+          <td>8</td><td>Critical</td>
+          <td>Poor dimensional accuracy from Ultimaker calibration</td>
+          <td>9</td><td>Printer calibration</td><td>Visual inspection</td>
+          <td>4</td><td class="rpn-high">288</td>
+          <td>Switch to Bambu P1S printer</td>
+          <td>Production team / Week 4</td>
+          <td>Switched to Bambu P1S</td>
+          <td>8</td><td>2</td><td>4</td><td class="rpn-low">64</td>
+        </tr>
+        <tr>
+          <td>Layer shifting</td>
+          <td>Misaligned geometry; gaps; casing won't shut</td>
+          <td>7</td><td>Major</td>
+          <td>Loose belts; print speed too high</td>
+          <td>7</td><td>Maintenance schedule</td><td>Operator inspection</td>
+          <td>5</td><td class="rpn-high">245</td>
+          <td>Regular belt tensioning; reduce speed</td>
+          <td>Maintenance / Week 2</td>
+          <td>Bambu auto-calibration resolved</td>
+          <td>7</td><td>2</td><td>3</td><td>42</td>
+        </tr>
+        <tr>
+          <td>Clogging / extrusion issues</td>
+          <td>Incomplete print; wasted material</td>
+          <td>6</td><td>Major</td>
+          <td>Filament quality; nozzle temperature</td>
+          <td>8</td><td>Filament storage</td><td>Printer error alert</td>
+          <td>6</td><td class="rpn-high">288</td>
+          <td>Use Bambu hardened nozzle; proper storage</td>
+          <td>Production / Week 2</td>
+          <td>Upgraded to Bambu P1S</td>
+          <td>6</td><td>2</td><td>4</td><td>48</td>
+        </tr>
+        <tr>
+          <td>Support material hard to remove</td>
+          <td>Damaged part; rough surface finish</td>
+          <td>4</td><td>Minor</td>
+          <td>PLA supports too strong; poor interface</td>
+          <td>6</td><td>Slicer settings</td><td>Manual inspection</td>
+          <td>6</td><td>144</td>
+          <td>Adjust support Z-distance</td>
+          <td>Design / Week 3</td>
+          <td>Bambu interface layer solved</td>
+          <td>4</td><td>2</td><td>3</td><td>24</td>
+        </tr>
+        <tr class="success-row">
+          <td>20</td><td>20</td>
+          <td>3D Printing (Bambu P1S)</td>
+          <td>File interruption / USB error</td>
+          <td>Print stops mid-way; wasted material</td>
+          <td>4</td><td>Minor</td>
+          <td>Flash drive corruption</td>
+          <td>2</td><td>Quality USB</td><td>Printer alert</td>
+          <td>7</td><td>56</td>
+          <td>Use network/cloud printing</td>
+          <td>IT / Week 2</td>
+          <td>Eliminated USB, use cloud</td>
+          <td>4</td><td>1</td><td>3</td><td class="rpn-low">12</td>
+        </tr>
+        <tr class="success-row">
+          <td>20</td><td>20</td>
+          <td>3D Printing (Bambu P1S)</td>
+          <td>Slight dimensional variation</td>
+          <td>Imperfect fit but passes inspection</td>
+          <td>5</td><td>Minor</td>
+          <td>Normal process variation</td>
+          <td>2</td><td>Auto-calibration</td><td>FESTO laser station</td>
+          <td>4</td><td>40</td>
+          <td>Accept within tolerance</td>
+          <td>Quality / Week 4</td>
+          <td>80% success rate achieved</td>
+          <td>5</td><td>2</td><td>4</td><td>40</td>
+        </tr>
+        <tr>
+          <td>30</td><td>30.01</td>
+          <td>Assemble lid on phone</td>
+          <td>Personal injury - operator cuts finger</td>
+          <td>Operator cuts finger on sharp case edge</td>
+          <td>10</td><td>Safety</td>
+          <td>Sharp edges from manufacturing process</td>
+          <td>5</td><td>Design guidelines</td><td>None</td>
+          <td>8</td><td class="rpn-high">400</td>
+          <td>Design curved edges; deburring operation; quality inspection</td>
+          <td>Design: 1 week / Manufacturing: 2 weeks / Quality: 3 weeks</td>
+          <td>Added deburring; inspection</td>
+          <td>10</td><td>2</td><td>4</td><td class="rpn-med">80</td>
+        </tr>
+        <tr>
+          <td>30</td><td>30.02</td>
+          <td>FESTO Station 2 - Laser Measurement</td>
+          <td>Depth measurement out of spec (1.18mm)</td>
+          <td>Casing rejected; assembly stops</td>
+          <td>8</td><td>Critical</td>
+          <td>Ultimaker dimensional inaccuracy</td>
+          <td>9</td><td>Process control</td><td>FESTO laser</td>
+          <td>2</td><td class="rpn-med">144</td>
+          <td>Switch to Bambu printer; batch inspection</td>
+          <td>Production / Week 4</td>
+          <td>Bambu prints pass consistently</td>
+          <td>8</td><td>2</td><td>2</td><td class="rpn-low">32</td>
+        </tr>
+        <tr>
+          <td>30</td><td>30.03</td>
+          <td>FESTO Station 4 - Pressing</td>
+          <td>Casing too tight / won't shut</td>
+          <td>Assembly incomplete; top casing won't close</td>
+          <td>6</td><td>Major</td>
+          <td>Oversized features; interference fit</td>
+          <td>4</td><td>Tolerance analysis</td><td>Manual test assembly</td>
+          <td>3</td><td>72</td>
+          <td>Test assembly before batch; adjust tolerances</td>
+          <td>Quality / Week 3</td>
+          <td>Revised tolerances implemented</td>
+          <td>6</td><td>2</td><td>3</td><td>36</td>
+        </tr>
+        <tr>
+          <td>30</td><td>30.04</td>
+          <td>FESTO Assembly</td>
+          <td>Casing too loose</td>
+          <td>Part shifts during assembly; misalignment</td>
+          <td>6</td><td>Major</td>
+          <td>Undersized dimensions from Ultimaker</td>
+          <td>5</td><td>SPC monitoring</td><td>Assembly fixture</td>
+          <td>3</td><td>90</td>
+          <td>Statistical process control on key dimensions</td>
+          <td>Quality / Week 3</td>
+          <td>SPC implemented with Bambu</td>
+          <td>6</td><td>1</td><td>2</td><td class="rpn-low">12</td>
+        </tr>
+        <tr>
+          <td>30</td><td>30.05</td>
+          <td>Final Assembly</td>
+          <td>Gaps between top and bottom casing</td>
+          <td>Poor appearance; dust ingress</td>
+          <td>4</td><td>Minor</td>
+          <td>Inconsistent depth across part</td>
+          <td>5</td><td>Design spec</td><td>Visual inspection</td>
+          <td>4</td><td>80</td>
+          <td>Inspect critical surfaces; adjust print orientation</td>
+          <td>Production / Week 2</td>
+          <td>Bambu orientation optimized</td>
+          <td>4</td><td>2</td><td>3</td><td>24</td>
+        </tr>
+        <tr>
+          <td>40</td><td>40.01</td>
+          <td>All day Printer Operation</td>
+          <td>Printer fails overnight</td>
+          <td>Downtime; wasted material; missed target</td>
+          <td>6</td><td>Major</td>
+          <td>No operator present to intervene</td>
+          <td>3</td><td>Remote monitoring</td><td>Cloud alerts</td>
+          <td>8</td><td class="rpn-med">144</td>
+          <td>Install cameras; remote monitoring system</td>
+          <td>IT / Week 4</td>
+          <td>Camera system installed</td>
+          <td>6</td><td>3</td><td>5</td><td>90</td>
+        </tr>
+        <tr>
+          <td>40</td><td>40.02</td>
+          <td> Printer Operation</td>
+          <td>Fire risk (thermal runaway)</td>
+          <td>Safety hazard; equipment damage</td>
+          <td>9</td><td>Safety</td>
+          <td>Unattended electrical fault</td>
+          <td>1</td><td>Thermal protection</td><td>Smoke detector</td>
+          <td>8</td><td>72</td>
+          <td>Fire suppression system; UL-certified printers</td>
+          <td>Facilities / Week 6</td>
+          <td>Fire ball suppressors added</td>
+          <td>9</td><td>1</td><td>5</td><td>45</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <!-- Row: FESTO Assembly -->
-    <tr>
-      <td>30</td>
-      <td>30.01</td>
-      <td>Assemble lid on phone</td>
-      <td>Personal injury - operator cuts finger</td>
-      <td>Operator cuts finger on sharp case edge</td>
-      <td>10</td>
-      <td>Safety</td>
-      <td>Sharp edges from manufacturing process</td>
-      <td>5</td>
-      <td>Design guidelines</td>
-      <td>None</td>
-      <td>8</td>
-      <td style="background: rgba(255,100,100,0.4);">400</td>
-      <td>Design curved edges; deburring operation; quality inspection</td>
-      <td>Design: 1 week / Manufacturing: 2 weeks / Quality: 3 weeks</td>
-      <td>Added deburring; inspection</td>
-      <td>10</td>
-      <td>2</td>
-      <td>4</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td>30.02</td>
-      <td>FESTO Station 2 - Laser Measurement</td>
-      <td>Depth measurement out of spec (1.18mm)</td>
-      <td>Casing rejected; assembly stops</td>
-      <td>8</td>
-      <td>Critical</td>
-      <td>Ultimaker dimensional inaccuracy</td>
-      <td>9</td>
-      <td>Process control</td>
-      <td>FESTO laser</td>
-      <td>2</td>
-      <td style="background: rgba(255,100,100,0.3);">144</td>
-      <td>Switch to Bambu printer; batch inspection</td>
-      <td>Production / Week 4</td>
-      <td>Bambu prints pass consistently</td>
-      <td>8</td>
-      <td>2</td>
-      <td>2</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td>30.03</td>
-      <td>FESTO Station 4 - Pressing</td>
-      <td>Casing too tight / won't shut</td>
-      <td>Assembly incomplete; top casing won't close</td>
-      <td>6</td>
-      <td>Major</td>
-      <td>Oversized features; interference fit</td>
-      <td>4</td>
-      <td>Tolerance analysis</td>
-      <td>Manual test assembly</td>
-      <td>3</td>
-      <td>72</td>
-      <td>Test assembly before batch; adjust tolerances</td>
-      <td>Quality / Week 3</td>
-      <td>Revised tolerances implemented</td>
-      <td>6</td>
-      <td>2</td>
-      <td>3</td>
-      <td>36</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td>30.04</td>
-      <td>FESTO Assembly</td>
-      <td>Casing too loose</td>
-      <td>Part shifts during assembly; misalignment</td>
-      <td>6</td>
-      <td>Major</td>
-      <td>Undersized dimensions from Ultimaker</td>
-      <td>5</td>
-      <td>SPC monitoring</td>
-      <td>Assembly fixture</td>
-      <td>3</td>
-      <td>90</td>
-      <td>Statistical process control on key dimensions</td>
-      <td>Quality / Week 3</td>
-      <td>SPC implemented with Bambu</td>
-      <td>6</td>
-      <td>1</td>
-      <td>2</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td>30.05</td>
-      <td>Final Assembly</td>
-      <td>Gaps between top and bottom casing</td>
-      <td>Poor appearance; dust ingress</td>
-      <td>4</td>
-      <td>Minor</td>
-      <td>Inconsistent depth across part</td>
-      <td>5</td>
-      <td>Design spec</td>
-      <td>Visual inspection</td>
-      <td>4</td>
-      <td>80</td>
-      <td>Inspect critical surfaces; adjust print orientation</td>
-      <td>Production / Week 2</td>
-      <td>Bambu orientation optimized</td>
-      <td>4</td>
-      <td>2</td>
-      <td>3</td>
-      <td>24</td>
-    </tr>
+  <div class="section-title">Production Capacity Analysis</div>
+  <div class="capacity-box">
+    <h3>50,000 Phones/Year Target</h3>
+    <p><strong>Target:</strong> 50,000 complete phones per year (50,000 top casings + 50,000 bottom casings)</p>
+    <p><strong>Print time (Bambu P1S):</strong> 2.5 hours for BOTH casings together (1 complete phone set)</p>
+    <p><strong>Actual success rate:</strong> 80% (1 in 5 fails, based on 4 of 5 successful prints)</p>
+    <p><strong>Working days:</strong> 260 days/year (Monday-Friday, 52 weeks)</p>
+    <p><strong>Total cases needed per day (80% success rate):</strong> 231 </p>
+    <p><strong>Total hours:</strong> 577 (roughly 600) </p>
+    <table class="cap-table">
+      <tr><th>Operating Scenario</th><th>Calculation</th><th>Printers Needed</th><th>Annual Output</th></tr>
+      <tr><td>8-hour shift (9-5, single shift)</td><td>600 ÷ 8 hours</td><td><strong>75 printers</strong></td><td>50,000 phones</td></tr>
+      <tr><td>16-hour shift (two shifts)</td><td>600 ÷ 16 hours</td><td><strong>38 printers</strong></td><td>50,000 phones</td></tr>
+      <tr><td><strong> operation (recommended)</strong></td><td>600 ÷ 24 hours</td><td><strong>25 printers</strong></td><td><strong>50,000 phones</strong></td></tr>
+      <tr><td> + 20% buffer for maintenance</td><td>25 × 1.2</td><td><strong>30 printers</strong></td><td>60,000 phones (buffer)</td></tr>
+    </table>
+    <p><strong>Recommendation:</strong> 25 Bambu P1S printers running  to meet 50,000 phones/year target with 80% success rate.</p>
+  </div>
 
-    <!-- Row: 24/7 Operation -->
-    <tr>
-      <td>40</td>
-      <td>40.01</td>
-      <td>24/7 Printer Operation</td>
-      <td>Printer fails overnight</td>
-      <td>Downtime; wasted material; missed target</td>
-      <td>6</td>
-      <td>Major</td>
-      <td>No operator present to intervene</td>
-      <td>3</td>
-      <td>Remote monitoring</td>
-      <td>Cloud alerts</td>
-      <td>8</td>
-      <td>144</td>
-      <td>Install cameras; remote monitoring system</td>
-      <td>IT / Week 4</td>
-      <td>Camera system installed</td>
-      <td>6</td>
-      <td>3</td>
-      <td>5</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <td>40</td>
-      <td>40.02</td>
-      <td>24/7 Printer Operation</td>
-      <td>Fire risk (thermal runaway)</td>
-      <td>Safety hazard; equipment damage</td>
-      <td>9</td>
-      <td>Safety</td>
-      <td>Unattended electrical fault</td>
-      <td>1</td>
-      <td>Thermal protection</td>
-      <td>Smoke detector</td>
-      <td>8</td>
-      <td>72</td>
-      <td>Fire suppression system; UL-certified printers</td>
-      <td>Facilities / Week 6</td>
-      <td>Fire ball suppressors added</td>
-      <td>9</td>
-      <td>1</td>
-      <td>5</td>
-      <td>45</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="intro-block">
+    <h4>Actual Trial Results vs PFMEA Predictions</h4>
+    <p><strong>Ultimaker S3/S5 Extended (15 prints):</strong> 10 failed prints (66% failure rate). 7 prints looked acceptable visually but <strong>0 passed FESTO measurement station</strong>. Primary failure: Depth measurement reading 1.18mm (spec required 1.6-2.2mm).</p>
+    <p><strong>Bambu Lab P1S (5 prints):</strong> 4 successful prints (80% success rate). 3 prints "perfect" - passed all FESTO stations. 1 failure due to USB interruption.</p>
+    <p><strong>Key Insight:</strong> The CAD design was correct. Switching from Ultimaker to Bambu P1S reduced RPN from 288 to 64.</p>
+  </div>
 
-<!-- CAPACITY CALCULATION -->
-<div class="capacity-box">
-  <h3>Production Capacity Analysis: 50,000 Phones/Year Target</h3>
-  <p><strong>Target:</strong> 50,000 complete phones per year (50,000 top casings + 50,000 bottom casings)</p>
-  <p><strong>Print time (Bambu P1S):</strong> 2.5 hours for BOTH casings together (1 complete phone set)</p>
-  <p><strong>Actual success rate:</strong> 80% (1 in 5 fails, based on 4 of 5 successful prints)</p>
-  <p><strong>Working days:</strong> 260 days/year (Monday-Friday, 52 weeks)</p>
-  
-  <table style="width: 100%; margin: 15px 0;">
-    <tr style="background: #142c42;"><th>Operating Scenario</th><th>Calculation</th><th>Printers Needed</th><th>Annual Output</th></tr>
-    <tr><td>8-hour shift (9-5, single shift)</td><td>600 ÷ 8 hours</td><td><strong>75 printers</strong></td><td>50,000 phones</td></tr>
-    <tr style="background: rgba(255,215,0,0.15);"><td>16-hour shift (two shifts)</td><td>600 ÷ 16 hours</td><td><strong>38 printers</strong></td><td>50,000 phones</td></tr>
-    <tr style="background: rgba(255,215,0,0.25);"><td><strong>24/7 operation (recommended)</strong></td><td>600 ÷ 24 hours</td><td><strong>25 printers</strong></td><td><strong>50,000 phones</strong></td></tr>
-    <tr><td>24/7 + 20% buffer for maintenance</td><td>25 × 1.2</td><td><strong>30 printers</strong></td><td>60,000 phones (buffer)</td></tr>
+  <div class="section-title">Severity Rating Scale (S)</div>
+  <table class="scale-table">
+    <thead><tr><th>Rank</th><th>Severity</th><th>Impact</th></tr></thead>
+    <tbody>
+      <tr><td>10</td><td>Hazardous - Without Warning</td><td>Potential injury or harm to personnel</td></tr>
+      <tr><td>9</td><td>Hazardous - With Warning</td><td>Injury possible; production shutdown</td></tr>
+      <tr><td>8</td><td>Very High</td><td>100% product scrapped; major financial impact</td></tr>
+      <tr><td>7</td><td>High</td><td>Product sorted; portion scrapped</td></tr>
+      <tr><td>6</td><td>Moderate</td><td>Portion scrapped; major rework required</td></tr>
+      <tr><td>5</td><td>Low</td><td>100% product reworked offline</td></tr>
+      <tr><td>4</td><td>Very Low</td><td>Sorted; portion reworked</td></tr>
+      <tr><td>3</td><td>Minor</td><td>Portion reworked online</td></tr>
+      <tr><td>2</td><td>Minor</td><td>Portion reworked in-station</td></tr>
+      <tr><td>1</td><td>None</td><td>Slight inconvenience; no detectable effect</td></tr>
+    </tbody>
   </table>
-  
-  <p><strong>Recommendation:</strong> 25 Bambu P1S printers running 24/7 to meet 50,000 phones/year target with 80% success rate.</p>
-</div>
 
-<!-- ACTUAL TRIAL RESULTS -->
+  <div class="section-title">Occurrence Rating Scale (O)</div>
+  <table class="scale-table">
+    <thead><tr><th>Rank</th><th>Keyword</th><th>Failure Rate</th></tr></thead>
+    <tbody>
+      <tr><td>10</td><td>Very High</td><td>≥100,000 PPM (≥1 in 10)</td></tr>
+      <tr><td>9</td><td>Very High</td><td>50,000 PPM (1 in 20)</td></tr>
+      <tr><td>8</td><td>High</td><td>20,000 PPM (1 in 50)</td></tr>
+      <tr><td>7</td><td>High</td><td>10,000 PPM (1 in 100)</td></tr>
+      <tr><td>6</td><td>Moderate</td><td>5,000 PPM (1 in 200)</td></tr>
+      <tr><td>5</td><td>Moderate</td><td>2,000 PPM (1 in 500)</td></tr>
+      <tr><td>4</td><td>Moderate</td><td>500 PPM (1 in 2,000)</td></tr>
+      <tr><td>3</td><td>Low</td><td>100 PPM (1 in 10,000)</td></tr>
+      <tr><td>2</td><td>Low</td><td>10 PPM (1 in 100,000)</td></tr>
+      <tr><td>1</td><td>Remote</td><td>≤1 PPM (&lt;1 in 1,000,000)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Detection Rating Scale (D)</div>
+  <table class="scale-table">
+    <thead><tr><th>Rank</th><th>Keyword</th><th>Likelihood of Detection</th></tr></thead>
+    <tbody>
+      <tr><td>10</td><td>Almost Impossible</td><td>No design control; cannot detect failure</td></tr>
+      <tr><td>9</td><td>Very Remote</td><td>Very remote chance of detection</td></tr>
+      <tr><td>8</td><td>Remote</td><td>Remote chance of detection</td></tr>
+      <tr><td>7</td><td>Very Low</td><td>Very low chance of detection</td></tr>
+      <tr><td>6</td><td>Low</td><td>Low chance of detection</td></tr>
+      <tr><td>5</td><td>Moderate</td><td>Moderate chance of detection</td></tr>
+      <tr><td>4</td><td>Moderately High</td><td>Moderately high chance of detection</td></tr>
+      <tr><td>3</td><td>High</td><td>High chance of detection</td></tr>
+      <tr><td>2</td><td>Very High</td><td>Very high chance of detection</td></tr>
+      <tr><td>1</td><td>Almost Certain</td><td>Will almost certainly detect failure</td></tr>
+    </tbody>
+  </table>
+
+  <div class="reference">
+    <h4>Academic &amp; Industry References</h4>
+    <p><strong>AIAG &amp; VDA (2019).</strong> <em>Failure Mode and Effects Analysis (FMEA) Handbook</em>. Automotive Industry Action Group.</p>
+    <p><strong>Stamatis, D. H. (2003).</strong> <em>Failure Mode and Effect Analysis: FMEA from Theory to Execution</em>. ASQ Quality Press.</p>
+    <p><strong>Liu, H. C., Liu, L., &amp; Liu, N. (2013).</strong> Risk evaluation approaches in FMEA: A literature review. <em>Expert Systems with Applications</em>, 40(2), 828-838.</p>
+    <p><strong>Huang, J., &amp; Li, Z. (2017).</strong> An integrated FMEA approach for additive manufacturing process risk assessment. <em>Procedia Manufacturing</em>, 11, 705-712.</p>
+    <p><strong>ISO 9001:2015</strong> - Quality management systems - Requirements</p>
+  </div>
+
+
 <div class="intro-block">
-  <h4 style="color:#ffd700;">Actual Trial Results vs PFMEA Predictions</h4>
-  <p><strong>Ultimaker S3/S5 Extended (15 prints):</strong> 10 failed prints (66% failure rate). 7 prints looked acceptable visually but <strong>0 passed FESTO measurement station</strong>. Primary failure: Depth measurement reading 1.18mm (spec required 1.6-2.2mm).</p>
-  <p><strong>Bambu Lab P1S (5 prints):</strong> 4 successful prints (80% success rate). 3 prints "perfect" - passed all FESTO stations. 1 failure due to USB interruption.</p>
-  <p><strong>Key Insight:</strong> The CAD design was correct. Switching from Ultimaker to Bambu P1S reduced RPN from 288 to 64.</p>
+  <h4>Reflection &amp; Innovation</h4>
+
+  <p><strong>Printer Selection as a Critical Control Point:</strong> Traditional FMEA frameworks often assume that process capability is fixed and focus on mitigating failures through detection and control mechanisms. However, this project demonstrated that equipment selection itself is a critical upstream control variable that directly influences risk. The Ultimaker platform consistently failed to meet dimensional requirements (RPN 288), whereas switching to the Bambu P1S reduced occurrence significantly (RPN 64). This indicates that rather than relying solely on downstream inspection, redesigning the process through improved equipment selection can fundamentally lower risk at its source — effectively reducing Occurrence rather than compensating through Detection.</p>
+
+  <p><strong>Economic and Operational Analysis of  Production:</strong> From a production systems perspective, achieving 50,000 units/year can be approached either by increasing asset quantity (75+ printers operating on 8-hour shifts) or by maximising asset utilisation (25 printers operating continuously). The  model is significantly more efficient because it increases utilisation from approximately 33% (8 hours out of 24) to near 100%. This reduces the required number of machines by two-thirds, leading to substantial capital savings (estimated £50,000+), as well as lower costs associated with floor space, infrastructure, maintenance, and operator labour.</p>
+
+  <p>Additionally, fewer machines improve process consistency and control. With 75+ printers, variability between machines (calibration drift, wear, environmental differences) increases process variation and raises Occurrence risk. In contrast, a smaller, continuously operating fleet allows tighter control, standardisation, and easier implementation of Statistical Process Control (SPC). This improves overall process capability (Cp/Cpk) and reduces the likelihood of defects at scale. Therefore, the  strategy is not only economically advantageous but also operationally more robust.</p>
+
+  <p><strong>FMEA Trade-Off: Occurrence vs Detection in Unattended Operation:</strong> While  operation reduces Occurrence through improved process control and equipment efficiency, it introduces a critical trade-off by increasing Detection risk. Unattended operation means failures such as print interruptions, material defects, or thermal issues may not be immediately identified, potentially increasing waste or downtime. In FMEA terms, this shifts risk from Occurrence to Detection.</p>
+
+  <p>To balance this trade-off, additional control measures must be implemented. Remote monitoring systems, cloud-based alerts, live camera feeds, and automated shutdown mechanisms act as enhanced detection controls, effectively lowering the Detection rating. This demonstrates a key FMEA principle: risk can be redistributed across Severity, Occurrence, and Detection, but must ultimately be managed holistically. In this case, technological controls compensate for the lack of human supervision.</p>
+
+  <p><strong>Safety as a Critical Constraint:</strong> Continuous, unattended operation introduces significant safety considerations, particularly the risk of thermal runaway or electrical faults in additive manufacturing systems. Unlike traditional shift-based production, failures occurring overnight may escalate without immediate intervention. Therefore, safety must be treated as a primary design constraint rather than a secondary consideration. The implementation of fire suppression systems (e.g. fireball extinguishers), thermal protection, certified equipment, and environmental monitoring is essential. These measures reduce Severity and Detection risks, ensuring that operational efficiency does not compromise safety.</p>
+
+  <p><strong>Conclusion:</strong> Switching to Bambu P1S reduced Occurrence from 9 to 2, lowering RPN from 288 to 64. Adopting a  production strategy with 25 printers provides the optimal balance between capital efficiency, process stability, and scalability. However, this approach is only viable when supported by robust monitoring and safety systems that mitigate the increased Detection risks associated with unattended operation. This project demonstrates that effective risk reduction is achieved not only through analysis, but through strategic process and system design decisions.</p>
 </div>
+</main>
 
-<!-- SEVERITY SCALE -->
-<div class="section-title"><h2>Severity Rating Scale (S)</h2></div>
-<table class="scale-table"><thead><tr><th>Rank</th><th>Severity</th><th>Impact</th></tr></thead>
-<tbody><tr><td>10</td><td>Hazardous - Without Warning</td><td>Potential injury or harm to personnel</td></tr>
-<tr><td>9</td><td>Hazardous - With Warning</td><td>Injury possible; production shutdown</td></tr>
-<tr><td>8</td><td>Very High</td><td>100% product scrapped; major financial impact</td></tr>
-<tr><td>7</td><td>High</td><td>Product sorted; portion scrapped</td></tr>
-<tr><td>6</td><td>Moderate</td><td>Portion scrapped; major rework required</td></tr>
-<tr><td>5</td><td>Low</td><td>100% product reworked offline</td></tr>
-<tr><td>4</td><td>Very Low</td><td>Sorted; portion reworked</td></tr>
-<tr><td>3</td><td>Minor</td><td>Portion reworked online</td></tr>
-<tr><td>2</td><td>Minor</td><td>Portion reworked in-station</td></tr>
-<tr><td>1</td><td>None</td><td>Slight inconvenience; no detectable effect</td></tr>
-</tbody></table>
-
-<!-- OCCURRENCE SCALE -->
-<div class="section-title"><h2>Occurrence Rating Scale (O)</h2></div>
-<table class="scale-table"><thead><tr><th>Rank</th><th>Keyword</th><th>Failure Rate</th></tr></thead>
-<tbody><tr><td>10</td><td>Very High</td><td>≥100,000 PPM (≥1 in 10)</td></tr>
-<tr><td>9</td><td>Very High</td><td>50,000 PPM (1 in 20)</td></tr>
-<tr><td>8</td><td>High</td><td>20,000 PPM (1 in 50)</td></tr>
-<tr><td>7</td><td>High</td><td>10,000 PPM (1 in 100)</td></tr>
-<tr><td>6</td><td>Moderate</td><td>5,000 PPM (1 in 200)</td></tr>
-<tr><td>5</td><td>Moderate</td><td>2,000 PPM (1 in 500)</td></tr>
-<tr><td>4</td><td>Moderate</td><td>500 PPM (1 in 2,000)</td></tr>
-<tr><td>3</td><td>Low</td><td>100 PPM (1 in 10,000)</td></tr>
-<tr><td>2</td><td>Low</td><td>10 PPM (1 in 100,000)</td></tr>
-<tr><td>1</td><td>Remote</td><td>≤1 PPM (&lt;1 in 1,000,000)</td></tr>
-</tbody></table>
-
-<!-- DETECTION SCALE -->
-<div class="section-title"><h2>Detection Rating Scale (D)</h2></div>
-<table class="scale-table"><thead><tr><th>Rank</th><th>Keyword</th><th>Likelihood of Detection</th></tr></thead>
-<tbody><tr><td>10</td><td>Almost Impossible</td><td>No design control; cannot detect failure</td></tr>
-<tr><td>9</td><td>Very Remote</td><td>Very remote chance of detection</td></tr>
-<tr><td>8</td><td>Remote</td><td>Remote chance of detection</td></tr>
-<tr><td>7</td><td>Very Low</td><td>Very low chance of detection</td></tr>
-<tr><td>6</td><td>Low</td><td>Low chance of detection</td></tr>
-<tr><td>5</td><td>Moderate</td><td>Moderate chance of detection</td></tr>
-<tr><td>4</td><td>Moderately High</td><td>Moderately high chance of detection</td></tr>
-<tr><td>3</td><td>High</td><td>High chance of detection</td></tr>
-<tr><td>2</td><td>Very High</td><td>Very high chance of detection</td></tr>
-<tr><td>1</td><td>Almost Certain</td><td>Will almost certainly detect failure</td></tr>
-</tbody></table>
-
-<!-- ACADEMIC REFERENCES -->
-<div class="reference">
-  <h4 style="color:#ffd700;">Academic & Industry References</h4>
-  <p><strong>AIAG & VDA (2019).</strong> <em>Failure Mode and Effects Analysis (FMEA) Handbook</em>. Automotive Industry Action Group.</p>
-  <p><strong>Stamatis, D. H. (2003).</strong> <em>Failure Mode and Effect Analysis: FMEA from Theory to Execution</em>. ASQ Quality Press.</p>
-  <p><strong>Liu, H. C., Liu, L., & Liu, N. (2013).</strong> Risk evaluation approaches in FMEA: A literature review. <em>Expert Systems with Applications</em>, 40(2), 828-838.</p>
-  <p><strong>Huang, J., & Li, Z. (2017).</strong> An integrated FMEA approach for additive manufacturing process risk assessment. <em>Procedia Manufacturing</em>, 11, 705-712.</p>
-  <p><strong>ISO 9001:2015</strong> - Quality management systems - Requirements</p>
-</div>
-
-<!-- STUDENT REFLECTION -->
-<div class="intro-block">
-  <h4 style="color:#ffd700;">Student Reflection & Innovation</h4>
-  <p><strong>Printer Selection as a Critical Control Point:</strong> Traditional FMEA assumes process capability is fixed, but this project demonstrated that printer selection is a controllable variable. The Ultimaker consistently failed (RPN 288) while the Bambu P1S passed (RPN 64).</p>
-  <p><strong>Economic Analysis of 24/7 Operation:</strong> 75 printers on 8-hour shifts equals 25 printers on 24/7 - a capital saving of £50,000+ but requiring remote monitoring systems (RPN 144 reduced to 90 with cameras).</p>
-  <p><strong>Conclusion:</strong> Switching to Bambu P1S reduced occurrence from 9 to 2, lowering RPN from 288 to 64. For 50,000 units/year, 25 Bambu printers running 24/7 with remote monitoring is recommended.</p>
-</div>
-
-<div class="footer">
-  <p>Paniz Manufacturing Company | PFMEA Analysis | Phones-R-Us Project | Based on Actual Trial Data (15+ prints, 10 FESTO runs)</p>
-</div>
+<footer>
+  <div>
+    <div class="footer-brand">Paniz Manufacturing Co.</div>
+    <div class="footer-sub">PFMEA Analysis · Phones-R-Us Project · Based on Actual Trial Data (15+ prints, 10 FESTO runs)</div>
+  </div>
+  <div class="footer-links">
+    <a href="project.html">Project</a>
+    <a href="printing.html">3D Printing</a>
+    <a href="quality.html">Quality</a>
+    <a href="simulation.html">Simulation</a>
+  </div>
+</footer>
 
 </body>
 </html>
-
