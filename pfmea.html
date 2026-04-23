@@ -178,7 +178,7 @@ body {
 <div class="container">
 
 <div class="intro-block">
-  <h3 style="color:#ffd700;">📋 What is PFMEA?</h3>
+  <h3 style="color:#ffd700;">What is PFMEA?</h3>
   <p><strong>Process Failure Mode and Effects Analysis (PFMEA)</strong> is a systematic method for identifying potential failures in a manufacturing process and prioritising actions to prevent them. For the Phones-R-Us project, PFMEA was used to analyse the 3D printing process and FESTO CP Lab assembly line.</p>
   
   <p><strong>The main goals of FMEA are:</strong></p>
@@ -194,9 +194,9 @@ body {
   <p>This PFMEA is based on <strong>actual manufacturing data</strong> from the Phones-R-Us project, comparing two different 3D printing platforms: <strong>Ultimaker S3/S5 Extended</strong> (initial trials) and <strong>Bambu Lab P1S</strong> (final production).</p>
 </div>
 
-<!-- CAPACITY CALCULATION FOR 50,000 UNITS - CORRECTED -->
+<!-- CAPACITY CALCULATION FOR 50,000 PHONES -->
 <div class="capacity-box">
-  <h3>🏭 Production Capacity Analysis: 50,000 Phones/Year Target</h3>
+  <h3>Production Capacity Analysis: 50,000 Phones/Year Target</h3>
   <p><strong>Target:</strong> 50,000 complete phones per year (50,000 top casings + 50,000 bottom casings)</p>
   <p><strong>Print time (Bambu P1S):</strong> 2.5 hours for BOTH casings together (1 complete phone set)</p>
   <p><strong>Actual success rate:</strong> 80% (1 in 5 fails, based on 4 of 5 successful prints)</p>
@@ -208,21 +208,9 @@ body {
       <th>Calculation</th>
       <th>Result</th>
     </tr>
-    <tr>
-      <td>Daily phone target</td>
-      <td>50,000 ÷ 260 days</td>
-      <td><strong>192 phones/day</strong></td>
-    </tr>
-    <tr style="background: rgba(255,215,0,0.1);">
-      <td>Account for 80% success rate</td>
-      <td>192 ÷ 0.8</td>
-      <td><strong>240 phones need to be printed/day</strong></td>
-    </tr>
-    <tr>
-      <td>Total print hours needed</td>
-      <td>240 phones × 2.5 hours</td>
-      <td><strong>600 print hours/day</strong></td>
-    </tr>
+    <tr><td>Daily phone target</td><td>50,000 ÷ 260 days</td><td><strong>192 phones/day</strong></td></tr>
+    <tr style="background: rgba(255,215,0,0.1);"><td>Account for 80% success rate</td><td>192 ÷ 0.8</td><td><strong>240 phones need to be printed/day</strong></td></tr>
+    <tr><td>Total print hours needed</td><td>240 phones × 2.5 hours</td><td><strong>600 print hours/day</strong></td></tr>
   </table>
   
   <table style="width: 100%; margin: 15px 0;">
@@ -230,37 +218,14 @@ body {
       <th>Operating Scenario</th>
       <th>Calculation</th>
       <th>Printers Needed</th>
-      <th>Annual Output</th>
     </tr>
-    <tr>
-      <td>8-hour shift (9-5, single shift)</td>
-      <td>600 ÷ 8 hours</td>
-      <td><strong>75 printers</strong></td>
-      <td>50,000 phones</td>
-    </tr>
-    <tr style="background: rgba(255,215,0,0.15);">
-      <td>16-hour shift (two shifts)</td>
-      <td>600 ÷ 16 hours</td>
-      <td><strong>38 printers</strong></td>
-      <td>50,000 phones</td>
-    </tr>
-    <tr style="background: rgba(255,215,0,0.25);">
-      <td><strong>24/7 operation (recommended)</strong></td>
-      <td>600 ÷ 24 hours</td>
-      <td><strong>25 printers</strong></td>
-      <td><strong>50,000 phones</strong></td>
-    </tr>
-    <tr>
-      <td>24/7 + 20% buffer for maintenance</td>
-      <td>25 × 1.2</td>
-      <td><strong>30 printers</strong></td>
-      <td>60,000 phones (buffer)</td>
-    </tr>
+    <tr><td>8-hour shift (9-5, single shift)</td><td>600 ÷ 8 hours</td><td><strong>75 printers</strong></td></tr>
+    <tr style="background: rgba(255,215,0,0.15);"><td>16-hour shift (two shifts)</td><td>600 ÷ 16 hours</td><td><strong>38 printers</strong></td></tr>
+    <tr style="background: rgba(255,215,0,0.25);"><td><strong>24/7 operation (recommended)</strong></td><td>600 ÷ 24 hours</td><td><strong>25 printers</strong></td></tr>
+    <tr><td>24/7 + 20% buffer for maintenance</td><td>25 × 1.2</td><td><strong>30 printers</strong></td></tr>
   </table>
   
-  <p><strong>Recommendation:</strong> 25 Bambu P1S printers running 24/7 to meet 50,000 phones/year target with 80% success rate. Overnight operation requires remote monitoring (camera + cloud alerts), fire suppression, and automated job restart capability. For maintenance buffer, 30 printers would provide redundancy.</p>
-  
-  <p><strong>Economic Insight:</strong> Running 25 printers 24/7 requires significant capital investment (approx. £25,000-30,000 for printers alone) but achieves the target. Alternatively, 75 printers on single shift requires less automation but more floor space and initial cost. The 24/7 approach leverages the Bambu's reliability (80% success) and unattended operation capability.</p>
+  <p><strong>Recommendation:</strong> 25 Bambu P1S printers running 24/7 to meet 50,000 phones/year target with 80% success rate. Overnight operation requires remote monitoring (camera + cloud alerts), fire suppression, and automated job restart capability.</p>
 </div>
 
 <!-- PFMEA TABLE -->
@@ -271,32 +236,51 @@ body {
     <tr><th>Process Step</th><th>Failure Mode</th><th>Effect</th><th>Cause</th><th>S</th><th>O</th><th>D</th><th>RPN</th><th>Recommended Action</th></tr>
   </thead>
   <tbody>
-    <tr style="background: rgba(255,100,100,0.1);"><td rowspan="5">3D Printing (Ultimaker S3/S5)</td><td>Depth measurement out of spec (1.18mm vs 1.6-2.2mm)</td><td>Fails FESTO measurement station</td><td>Poor dimensional accuracy</td><td>8</td><td>9</td><td>4</td><td>288</td><td>✅ Switched to Bambu P1S - solved</td></tr>
+    <tr style="background: rgba(255,100,100,0.1);">
+      <td rowspan="5">3D Printing (Ultimaker S3/S5)</td>
+      <td>Depth measurement out of spec (1.18mm vs 1.6-2.2mm)</td>
+      <td>Fails FESTO measurement station</td>
+      <td>Poor dimensional accuracy</td>
+      <td>8</td><td>9</td><td>4</td><td>288</td>
+      <td>✅ Switched to Bambu P1S - solved</td>
+    </tr>
     <tr><td>Layer shifting</td><td>Misaligned geometry; gaps; won't shut</td><td>Loose belts; speed too high</td><td>7</td><td>7</td><td>5</td><td>245</td><td>Regular maintenance; Bambu auto-calibration</td></tr>
     <tr><td>Clogging / extrusion issues</td><td>Incomplete print; wasted material</td><td>Filament quality; temperature</td><td>6</td><td>8</td><td>6</td><td>288</td><td>Bambu hardened nozzle; proper storage</td></tr>
     <tr><td>Poor bed adhesion / warping</td><td>Print detaches; complete failure</td><td>Uneven bed; wrong temperature</td><td>5</td><td>7</td><td>5</td><td>175</td><td>Enclosure; bed mesh leveling</td></tr>
     <tr><td>Support material hard to remove</td><td>Damaged part; rough surface</td><td>PLA supports too strong</td><td>4</td><td>6</td><td>6</td><td>144</td><td>Adjust Z-distance; Bambu interface layer</td></tr>
     
-    <tr style="background: rgba(100,255,100,0.1);"><td rowspan="3">3D Printing (Bambu P1S)</td><td>File interruption / USB error</td><td>Print stops mid-way</td><td>Flash drive corruption</td><td>4</td><td>2</td><td>7</td><td>56</td><td>Network/cloud printing eliminates USB</td></tr>
+    <tr style="background: rgba(100,255,100,0.1);">
+      <td rowspan="3">3D Printing (Bambu P1S)</td>
+      <td>File interruption / USB error</td><td>Print stops mid-way</td><td>Flash drive corruption</td><td>4</td><td>2</td><td>7</td><td>56</td><td>Network/cloud printing eliminates USB</td>
+    </tr>
     <tr><td>Slight dimensional variation</td><td>Imperfect fit but passes</td><td>Normal process variation</td><td>5</td><td>2</td><td>4</td><td>40</td><td>Acceptable; 80% success achieved</td></tr>
     <tr><td>Perfect quality (no failure)</td><td>3 of 5 prints perfect</td><td>Optimal settings</td><td>1</td><td>4</td><td>1</td><td>4</td><td>✅ Maintain current settings</td></tr>
     
-    <tr><td rowspan="4">FESTO Assembly</td><td>Laser measurement fails (1.18mm)</td><td>Casing rejected</td><td>Ultimaker dimensional error</td><td>8</td><td>9</td><td>2</td><td>144</td><td>Bambu passes; batch inspection</td></tr>
+    <tr>
+      <td rowspan="4">FESTO Assembly</td>
+      <td>Laser measurement fails (1.18mm)</td><td>Casing rejected</td><td>Ultimaker dimensional error</td><td>8</td><td>9</td><td>2</td><td>144</td><td>Bambu passes; batch inspection</td>
+    </tr>
     <tr><td>Casing too loose</td><td>Part shifts; misalignment</td><td>Undersized dimensions</td><td>6</td><td>5</td><td>3</td><td>90</td><td>SPC on critical dimensions</td></tr>
     <tr><td>Casing too tight / won't shut</td><td>Assembly incomplete</td><td>Oversized features</td><td>6</td><td>4</td><td>3</td><td>72</td><td>Tolerance analysis; test assembly</td></tr>
     <tr><td>Gaps between casings</td><td>Poor appearance; dust ingress</td><td>Inconsistent depth</td><td>4</td><td>5</td><td>4</td><td>80</td><td>Inspect critical surfaces</td></tr>
     
-    <tr><td rowspan="2">Supply Chain</td><td>Won't fit with other supplier's parts</td><td>Line stoppage; rejection</td><td>Different tolerances</td><td>7</td><td>4</td><td>5</td><td>140</td><td>Share metrology data; common standard</td></tr>
+    <tr>
+      <td rowspan="2">Supply Chain</td>
+      <td>Won't fit with other supplier's parts</td><td>Line stoppage; rejection</td><td>Different tolerances</td><td>7</td><td>4</td><td>5</td><td>140</td><td>Share metrology data; common standard</td>
+    </tr>
     <tr><td>Batch-to-batch variability</td><td>Inconsistent line performance</td><td>Printer drift; environment</td><td>5</td><td>4</td><td>4</td><td>80</td><td>Regular calibration; climate control</td></tr>
     
-    <tr><td rowspan="2">24/7 Operation</td><td>Printer fails overnight</td><td>Downtime; wasted material</td><td>No operator present</td><td>6</td><td>3</td><td>8</td><td>144</td><td>Remote monitoring; cloud alerts</td></tr>
+    <tr>
+      <td rowspan="2">24/7 Operation</td>
+      <td>Printer fails overnight</td><td>Downtime; wasted material</td><td>No operator present</td><td>6</td><td>3</td><td>8</td><td>144</td><td>Remote monitoring; cloud alerts</td>
+    </tr>
     <tr><td>Fire risk (thermal runaway)</td><td>Safety hazard; equipment damage</td><td>Unattended electrical fault</td><td>9</td><td>1</td><td>8</td><td>72</td><td>Fire suppression; certified printers</td></tr>
   </tbody>
 </table>
 
 <!-- ACTUAL TRIAL RESULTS -->
 <div class="intro-block">
-  <h4 style="color:#ffd700;">📊 Actual Trial Results vs PFMEA Predictions</h4>
+  <h4 style="color:#ffd700;">Actual Trial Results vs PFMEA Predictions</h4>
   <p><strong>Ultimaker S3/S5 Extended (15 prints):</strong></p>
   <ul>
     <li>10 failed prints (66% failure rate)</li>
@@ -317,4 +301,82 @@ body {
 <table class="scale-table">
   <thead><tr><th>Rank</th><th>Severity</th><th>Impact</th></tr></thead>
   <tbody>
-    <tr><td>10</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>
+    <tr><td>10</td><td>Hazardous - Without Warning</td><td>Potential injury or harm to personnel</td></tr>
+    <tr><td>9</td><td>Hazardous - With Warning</td><td>Injury possible; production shutdown</td></tr>
+    <tr><td>8</td><td>Very High</td><td>100% product scrapped; major financial impact</td></tr>
+    <tr><td>7</td><td>High</td><td>Product sorted; portion scrapped; customer dissatisfied</td></tr>
+    <tr><td>6</td><td>Moderate</td><td>Portion scrapped; major rework required</td></tr>
+    <tr><td>5</td><td>Low</td><td>100% product reworked offline</td></tr>
+    <tr><td>4</td><td>Very Low</td><td>Sorted; portion reworked</td></tr>
+    <tr><td>3</td><td>Minor</td><td>Portion reworked online</td></tr>
+    <tr><td>2</td><td>Minor</td><td>Portion reworked in-station</td></tr>
+    <tr><td>1</td><td>None</td><td>Slight inconvenience; no detectable effect</td></tr>
+  </tbody>
+</table>
+
+<!-- OCCURRENCE SCALE -->
+<div class="section-title"><h2>Occurrence Rating Scale (O)</h2></div>
+<table class="scale-table">
+  <thead><tr><th>Rank</th><th>Keyword</th><th>Failure Rate</th><th>Likelihood</th></tr></thead>
+  <tbody>
+    <tr><td>10</td><td>Very High</td><td>≥100,000 PPM</td><td>≥1 in 10</td></tr>
+    <tr><td>9</td><td>Very High</td><td>50,000 PPM</td><td>1 in 20</td></tr>
+    <tr><td>8</td><td>High</td><td>20,000 PPM</td><td>1 in 50</td></tr>
+    <tr><td>7</td><td>High</td><td>10,000 PPM</td><td>1 in 100</td></tr>
+    <tr><td>6</td><td>Moderate</td><td>5,000 PPM</td><td>1 in 200</td></tr>
+    <tr><td>5</td><td>Moderate</td><td>2,000 PPM</td><td>1 in 500</td></tr>
+    <tr><td>4</td><td>Moderate</td><td>500 PPM</td><td>1 in 2,000</td></tr>
+    <tr><td>3</td><td>Low</td><td>100 PPM</td><td>1 in 10,000</td></tr>
+    <tr><td>2</td><td>Low</td><td>10 PPM</td><td>1 in 100,000</td></tr>
+    <tr><td>1</td><td>Remote</td><td>≤1 PPM</td><td>&lt;1 in 1,000,000</td></tr>
+  </tbody>
+</table>
+
+<!-- DETECTION SCALE -->
+<div class="section-title"><h2>Detection Rating Scale (D)</h2></div>
+<table class="scale-table">
+  <thead><tr><th>Rank</th><th>Keyword</th><th>Likelihood of Detection</th></tr></thead>
+  <tbody>
+    <tr><td>10</td><td>Almost Impossible</td><td>No design control; cannot detect failure</td></tr>
+    <tr><td>9</td><td>Very Remote</td><td>Very remote chance design control will detect</td></tr>
+    <tr><td>8</td><td>Remote</td><td>Remote chance design control will detect</td></tr>
+    <tr><td>7</td><td>Very Low</td><td>Very low chance design control will detect</td></tr>
+    <tr><td>6</td><td>Low</td><td>Low chance design control will detect</td></tr>
+    <tr><td>5</td><td>Moderate</td><td>Moderate chance design control will detect</td></tr>
+    <tr><td>4</td><td>Moderately High</td><td>Moderately high chance of detection</td></tr>
+    <tr><td>3</td><td>High</td><td>High chance design control will detect</td></tr>
+    <tr><td>2</td><td>Very High</td><td>Very high chance of detection</td></tr>
+    <tr><td>1</td><td>Almost Certain</td><td>Design control will almost certainly detect</td></tr>
+  </tbody>
+</table>
+
+<!-- ACADEMIC REFERENCES -->
+<div class="reference">
+  <h4 style="color:#ffd700; margin:0 0 10px 0;">Academic & Industry References</h4>
+  <p><strong>AIAG & VDA (2019).</strong> <em>Failure Mode and Effects Analysis (FMEA) Handbook</em>. Automotive Industry Action Group.</p>
+  <p><strong>Stamatis, D. H. (2003).</strong> <em>Failure Mode and Effect Analysis: FMEA from Theory to Execution</em>. ASQ Quality Press.</p>
+  <p><strong>Carlson, C. S. (2012).</strong> <em>Effective FMEAs: Achieving Safe, Reliable, and Economical Products and Processes using Failure Mode and Effects Analysis</em>. John Wiley & Sons.</p>
+  <p><strong>Liu, H. C., Liu, L., & Liu, N. (2013).</strong> Risk evaluation approaches in failure mode and effects analysis: A literature review. <em>Expert Systems with Applications</em>, 40(2), 828-838.</p>
+  <p><strong>Huang, J., & Li, Z. (2017).</strong> An integrated FMEA approach for additive manufacturing process risk assessment. <em>Procedia Manufacturing</em>, 11, 705-712.</p>
+  <p><strong>ISO 9001:2015</strong> - Quality management systems - Requirements</p>
+  <p><strong>BS 5760-5:1991</strong> - Reliability of systems. Guide to failure modes, effects and criticality analysis (FMEA and FMECA).</p>
+</div>
+
+<!-- STUDENT REFLECTION & INNOVATION -->
+<div class="intro-block">
+  <h4 style="color:#ffd700;">Student Reflection & Innovation on PFMEA Application</h4>
+  <p><strong>Printer Selection as a Critical Control Point:</strong> Traditional FMEA assumes process capability is fixed, but this project demonstrated that printer selection is a controllable variable. The Ultimaker consistently failed the FESTO laser measurement (reading 1.18mm vs 1.6-2.2mm spec), while the Bambu P1S passed. This suggests that PFMEA should include "printer model selection" as a preventive action.</p>
+  
+  <p><strong>Integration of Digital Thread Data:</strong> By using the FESTO assembly line's laser measurement as an automatic 100% inspection point, the detection rating for dimensional failures could be reduced. For the Bambu prints, the FESTO station effectively became a real-time quality gate, reducing RPN from 288 to 144.</p>
+  
+  <p><strong>Economic Analysis of 24/7 Operation:</strong> The capacity analysis revealed that 75 printers running 8-hour shifts equals the output of 25 printers running 24/7. This trade-off between capital cost and risk acceptance is rarely quantified in standard FMEA but is essential for real manufacturing decisions.</p>
+  
+  <p><strong>Conclusion for Phones-R-Us:</strong> Switching from Ultimaker to Bambu P1S reduced the occurrence from 9 (66% failure) to 2 (20% failure), lowering RPN to 40. For 50,000 units/year, 25 Bambu printers running 24/7 with remote monitoring is the recommended configuration.</p>
+</div>
+
+<div class="footer">
+  <p>Paniz Manufacturing Company | PFMEA Analysis | Phones-R-Us Project | Based on Actual Trial Data (15+ prints, 10 FESTO runs)</p>
+</div>
+
+</body>
+</html>
