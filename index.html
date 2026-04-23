@@ -1,129 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <title>Paniz Manufacturing</title>
-
 <style>
-* { box-sizing: border-box; }
-
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(rgba(5,10,15,0.9), rgba(5,10,15,0.95)),
-              url('https://github.com/panizmazaheri953-sudo/Digital-Manufacturing-/blob/main/Screenshot%202026-04-16%20at%2013.32.07.png?raw=true');
+  padding: 0;
+  background-image: url('https://github.com/panizmazaheri953-sudo/Digital-Manufacturing-/blob/main/Screenshot%202026-04-16%20at%2013.32.07.png?raw=true');
   background-size: cover;
   background-attachment: fixed;
-  color: #eaeaea;
+  background-position: center;
 }
-
-/* HEADER */
 .header {
-  text-align: center;
-  padding: 60px 20px 40px;
-  background: linear-gradient(135deg, #10273a, #08141f);
-}
-
-.header h1 { margin: 0; font-size: 2.8rem; }
-.header p { margin-top: 10px; color: #cfcfcf; }
-
-/* NAV */
-.nav {
-  position: sticky;
-  top: 0;
-  background: #0b1a26;
-  text-align: center;
-  padding: 12px;
-}
-
-.nav a {
-  color: #eaeaea;
-  text-decoration: none;
-  margin: 0 18px;
-  transition: 0.3s;
-}
-
-.nav a:hover { color: #ffd700; }
-
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 30px 20px;
-  text-align: center;
-}
-
-/* INTRO STYLE BLOCK (used for main text) */
-.intro-block {
-  background: #0f2233;
+  background-color: rgba(44, 95, 138, 0.9);
+  color: white;
   padding: 30px;
+  text-align: center;
+}
+.nav {
+  background-color: rgba(26, 58, 92, 0.9);
+  padding: 15px;
+  text-align: center;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
   border-radius: 15px;
-  margin-bottom: 30px;
-  border-left: 5px solid #ffd700;
-  font-size: 1.1rem;
-  line-height: 1.8;
   text-align: center;
+  color: white;
 }
-
-/* SECTION TITLE */
-.section-title {
-  text-align: center;
-  margin: 40px 0 20px;
+.container p {
+  font-size: 18px;
+  line-height: 1.6;
 }
-
-.section-title h2 {
-  display: inline-block;
-  border-bottom: 3px solid #ffd700;
-  padding-bottom: 8px;
+h2 {
+  color: white;
+  margin-top: 30px;
 }
-
-/* TABLE STYLES */
-.spec-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto 30px;
-  background: #0f1f2e;
+h2:first-of-type {
+  margin-top: 0;
 }
-
-.spec-table th, .spec-table td {
-  padding: 12px;
-  text-align: center;
-}
-
-.spec-table th {
-  background: #142c42;
-  color: #ffd700;
-}
-
-/* PROCESS TABLE (keeps original look but with new colors) */
-.process-table {
+table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  background: #0f1f2e;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 10px;
 }
-
-.process-table th, .process-table td {
-  border: 1px solid rgba(255,215,0,0.3);
+th, td {
+  border: 1px solid rgba(255,255,255,0.3);
   padding: 12px;
   text-align: left;
 }
-
-.process-table th {
-  background: #142c42;
-  color: #ffd700;
+th {
+  background-color: rgba(44, 95, 138, 0.8);
+  color: white;
 }
-
-/* FOOTER */
 .footer {
+  background-color: rgba(26, 58, 92, 0.9);
+  color: white;
   text-align: center;
-  padding: 25px;
+  padding: 20px;
   margin-top: 40px;
-  background: #08141f;
 }
 </style>
 </head>
-
 <body>
 
 <div class="header">
@@ -141,37 +95,32 @@ body {
 </div>
 
 <div class="container">
-
-<div class="intro-block">
+  <h2>Welcome to Paniz Manufacturing</h2>
+  
   <p>As a specialist manufacturer of additively produced components, our objective is to deliver high-quality top and bottom phone casings that meet strict dimensional requirements and integrate seamlessly with components supplied by other vendors. We aim to support production volumes of up to 50,000 units per year while maintaining consistency and reliability.</p>
+  
   <p>To achieve this, FDM-based additive manufacturing has been selected due to its flexibility and rapid production capabilities. However, producing components suitable for assembly-line integration requires careful process development, validation, and optimisation.</p>
+  
   <p>This blog documents the evolution of our manufacturing process, from initial trials through to final production, with a focus on achieving a stable and scalable solution.</p>
-</div>
-
-<div class="section-title"><h2>Current Project: Phones-R-Us</h2></div>
-
-<table class="spec-table">
-  <tr><th>Parameter</th><th>Value</th></tr>
-  <tr><td>Target</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></td><td>50,000 interchangeable phone casings per year</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></td></tr>
-  <tr><td>Timeline</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></td><td>9-week prototype delivery</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></td></tr>
-</table>
-
-<div class="section-title"><h2>Our Process</h2></div>
-
-<table class="process-table">
-  <tr><th>Stage</th><th>Description</th></tr>
-  <tr><td>1. Design</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></td><td>CAD modelling from client drawings</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></td></tr>
-  <tr><td>2. 3D Printing</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></td><td>Additive manufacturing using Ultimaker and Bambu printers</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> </tr>
-  <tr><td>3. Metrology</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> </td><td>Precision measurement of all dimensions</td> </tr>
-  <tr><td>4. Quality Control</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> </td><td>Statistical process analysis</td> </tr>
-  <tr><td>5. Assembly Testing</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> </td><td>FESTO CP Lab validation</td> </tr>
-  <tr><td>6. Capacity Planning</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> </td><td>Plant simulation for production scaling</td> </tr>
-</table>
-
+  
+  <h2>Current Project: Phones-R-Us</h2>
+  <p><strong>Target:</strong> 50,000 interchangeable phone casings per year</p>
+  <p><strong>Timeline:</strong> 9-week prototype delivery</p>
+  
+  <h2>Our Process</h2>
+  <table>
+    <tr><th>Stage</th><th>Description</th></tr>
+    <tr><td>1. Design</td><td>CAD modelling from client drawings</td></tr>
+    <tr><td>2. 3D Printing</td><td>Additive manufacturing using Ultimaker and Bambu printers</td></tr>
+    <tr><td>3. Metrology</td><td>Precision measurement of all dimensions</td></tr>
+    <tr><td>4. Quality Control</td><td>Statistical process analysis</td></tr>
+    <tr><td>5. Assembly Testing</td><td>FESTO CP Lab validation</td></tr>
+    <tr><td>6. Capacity Planning</td><td>Plant simulation for production scaling</td></tr>
+  </table>
 </div>
 
 <div class="footer">
-  Paniz Manufacturing Company | Digital Manufacturing Portfolio
+  <p>Paniz Manufacturing Company | Digital Manufacturing Portfolio</p>
 </div>
 
 </body>
