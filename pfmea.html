@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PFMEA | Paniz Manufacturing</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(rgba(5,10,15,0.6), rgba(5,10,15,0.7)),
+              url('https://github.com/panizmazaheri953-sudo/Digital-Manufacturing-/blob/main/Screenshot%202026-04-16%20at%2013.32.07.png?raw=true');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #eaeaea;
+}
+
+.header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(135deg, #10273a, #08141f);
+}
+
+.header h1 { margin: 0; font-size: 2.8rem; }
+.header p { margin-top: 10px; color: #cfcfcf; }
+
+.nav {
+  position: sticky;
+  top: 0;
+  background: #0b1a26;
+  text-align: center;
+  padding: 12px;
+}
+
+.nav a {
+  color: #eaeaea;
+  text-decoration: none;
+  margin: 0 18px;
+  transition: 0.3s;
+}
+
+.nav a:hover { color: #ffd700; }
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.section-title h2 {
+  display: inline-block;
+  border-bottom: 3px solid #ffd700;
+  padding-bottom: 8px;
+}
+
+.intro-block {
+  background: #0f2233;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  border-left: 5px solid #ffd700;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.intro-block p { margin: 10px 0; }
+
+.reference {
+  background: #0a1a28;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-size: 0.9rem;
+  border-left: 3px solid #ffd700;
+}
+
+.reference a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.reference a:hover { text-decoration: underline; }
+
+/* Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #0f1f2e;
+  font-size: 0.85rem;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid rgba(255,215,0,0.3);
+  padding: 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.data-table th {
+  background: #142c42;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.data-table td:first-child {
+  font-weight: bold;
+  background: rgba(20, 44, 66, 0.5);
+}
+
+.scale-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  background: #0f1f2e;
+  font-size: 0.8rem;
+}
+
+.scale-table th, .scale-table td {
+  border: 1px solid rgba(255,215,0,0.2);
+  padding: 8px;
+  text-align: left;
+}
+
+.scale-table th {
+  background: #1a3a4a;
+  color: #ffd700;
+}
+
+.rpn-calculator {
+  background: #0f2233;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 30px 0;
+  text-align: center;
+  border: 1px solid #ffd700;
+}
+
+.rpn-input {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.rpn-input div {
+  text-align: center;
+}
+
+.rpn-input label {
+  display: block;
+  color: #ffd700;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.rpn-input select {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background: #08141f;
+  color: white;
+  border: 1px solid #ffd700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.rpn-result {
+  margin-top: 20px;
+  padding: 15px;
+  background: #08141f;
+  border-radius: 10px;
+}
+
+.rpn-result span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.rpn-risk {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.high-risk { color: #ff6666; }
+.medium-risk { color: #ffaa66; }
+.low-risk { color: #66ff66; }
+
+.footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+  background: #08141f;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Paniz Manufacturing Company</h1>
+  <p>Process Failure Mode & Effects Analysis (PFMEA)</p>
+</div>
+
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="project.html">Project</a>
+  <a href="design.html">Design</a>
+  <a href="pfmea.html">PFMEA</a>
+  <a href="printing.html">3D Printing</a>
+  <a href="quality.html">Quality</a>
+  <a href="simulation.html">Simulation</a>
+</div>
+
+<div class="container">
+
+<div class="intro-block">
+  <h3 style="color:#ffd700;">What is PFMEA?</h3>
+  <p><strong>Process Failure Mode and Effects Analysis (PFMEA)</strong> is a systematic method for identifying potential failures in a manufacturing process and prioritising actions to prevent them. For the Phones-R-Us project, PFMEA was used to analyse the assembly line and 3D printing processes.</p>
+  
+  <p><strong>The main goals of FMEA are:</strong></p>
+  <ul style="text-align: left;">
+    <li>Identify critical components to ensure quality of production</li>
+    <li>Identify possible failures early to ensure production functions</li>
+    <li>Estimate risks before they occur</li>
+    <li>Reduce or remove cost of changes after mass production starts</li>
+    <li>Support continuous improvement</li>
+  </ul>
+  
+  <p>The <strong>Risk Priority Number (RPN)</strong> is calculated as: <strong style="color:#ffd700;">RPN = Severity × Occurrence × Detection</strong></p>
+  <p>A higher RPN indicates a higher priority for corrective action.</p>
+</div>
+
+<!-- INTERACTIVE RPN CALCULATOR -->
+<div class="rpn-calculator">
+  <h3 style="color:#ffd700; margin:0 0 15px 0;">Interactive RPN Calculator</h3>
+  <p>Select values to calculate Risk Priority Number for any failure mode:</p>
+  
+  <div class="rpn-input">
+    <div>
+      <label>Severity (S)</label>
+      <select id="severity" onchange="calculateRPN()">
+        <option value="1">1 - None</option>
+        <option value="2">2 - Very Minor</option>
+        <option value="3">3 - Minor</option>
+        <option value="4">4 - Very Low</option>
+        <option value="5">5 - Low</option>
+        <option value="6">6 - Moderate</option>
+        <option value="7">7 - High</option>
+        <option value="8">8 - Very High</option>
+        <option value="9">9 - Hazardous (with warning)</option>
+        <option value="10" selected>10 - Hazardous (without warning)</option>
+      </select>
+    </div>
+    <div>
+      <label>Occurrence (O)</label>
+      <select id="occurrence" onchange="calculateRPN()">
+        <option value="1">1 - Remote (&lt;1 in 1,000,000)</option>
+        <option value="2">2 - Very Low (1 in 100,000)</option>
+        <option value="3">3 - Low (1 in 10,000)</option>
+        <option value="4">4 - Moderate (1 in 2,000)</option>
+        <option value="5">5 - Moderate (1 in 500)</option>
+        <option value="6" selected>6 - Moderate (1 in 200)</option>
+        <option value="7">7 - High (1 in 100)</option>
+        <option value="8">8 - High (1 in 50)</option>
+        <option value="9">9 - Very High (1 in 20)</option>
+        <option value="10">10 - Very High (1 in 10)</option>
+      </select>
+    </div>
+    <div>
+      <label>Detection (D)</label>
+      <select id="detection" onchange="calculateRPN()">
+        <option value="1">1 - Almost Certain</option>
+        <option value="2">2 - Very High</option>
+        <option value="3">3 - High</option>
+        <option value="4">4 - Moderately High</option>
+        <option value="5">5 - Moderate</option>
+        <option value="6" selected>6 - Low</option>
+        <option value="7">7 - Very Low</option>
+        <option value="8">8 - Remote</option>
+        <option value="9">9 - Very Remote</option>
+        <option value="10">10 - Almost Impossible</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="rpn-result">
+    <p><strong>Risk Priority Number (RPN):</strong> <span id="rpnValue">400</span></p>
+    <p class="rpn-risk" id="riskLevel">⚠️ <span style="color:#ff6666;">HIGH RISK - Action Required</span></p>
+  </div>
+  
+  <p style="font-size:0.8rem; margin-top:15px;">*Based on PFMEA Severity, Occurrence, and Detection rating scales below</p>
+</div>
+
+<!-- PFMEA TABLE FOR PHONES-R-US -->
+<div class="section-title"><h2>PFMEA: Phones-R-Us Assembly & 3D Printing Process</h2></div>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Process Step</th>
+      <th>Failure Mode</th>
+      <th>Effect of Failure</th>
+      <th>Cause</th>
+      <th>S</th>
+      <th>O</th>
+      <th>D</th>
+      <th>RPN</th>
+      <th>Recommended Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Assemble lid on phone</td>
+      <td>Operator cuts finger on case edge</td>
+      <td>Personal injury</td>
+      <td>Sharp edges from manufacturing process</td>
+      <td>10</td>
+      <td>5</td>
+      <td>8</td>
+      <td>400</td>
+      <td>Introduce deburring operation; quality inspection for sharp edges</td>
+    </tr>
+    <tr>
+      <td>3D Printing - Top Casing</td>
+      <td>Warping during print</td>
+      <td>Dimensional inaccuracy; poor fit with bottom casing</td>
+      <td>Uneven bed temperature; poor bed adhesion</td>
+      <td>7</td>
+      <td>6</td>
+      <td>5</td>
+      <td>210</td>
+      <td>Calibrate bed; use heated enclosure; adjust first layer settings</td>
+    </tr>
+    <tr>
+      <td>3D Printing - Bottom Casing</td>
+      <td>Layer shifting</td>
+      <td>Misaligned features; assembly failure</td>
+      <td>Loose belts; print speed too high</td>
+      <td>8</td>
+      <td>4</td>
+      <td>4</td>
+      <td>128</td>
+      <td>Regular maintenance; reduce print speed; tighten belts</td>
+    </tr>
+    <tr>
+      <td>FESTO Assembly - Station 4</td>
+      <td>Pressing mechanism jams</td>
+      <td>Production stoppage; assembly incomplete</td>
+      <td>Casing tolerance out of spec (±0.1mm)</td>
+      <td>8</td>
+      <td>5</td>
+      <td>6</td>
+      <td>240</td>
+      <td>Implement statistical process control (SPC); 100% inspection</td>
+    </tr>
+    <tr>
+      <td>Metrology Inspection</td>
+      <td>Measurement error</td>
+      <td>Incorrect parts passed or rejected</td>
+      <td>Uncalibrated CMM; operator error</td>
+      <td>6</td>
+      <td>3</td>
+      <td>3</td>
+      <td>54</td>
+      <td>Daily calibration; operator training</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- SEVERITY SCALE -->
+<div class="section-title"><h2>Severity Rating Scale (S)</h2></div>
+<table class="scale-table">
+  <thead><tr><th>Rank</th><th>Severity Keywords</th><th>Impact on Process / Product</th></tr></thead>
+  <tbody>
+    <tr><td>10</td><td>Hazardous - Without Warning</td><td>Potential for injury or harm to operating personnel. Non-compliance with regulations without warning.</td></tr>
+    <tr><td>9</td><td>Hazardous - With Warning</td><td>Potential for injury or harm with warning. Missed shipment shutting down production.</td></tr>
+    <tr><td>8</td><td>Very High</td><td>100% product scrapped. Equipment down for significant period. Major financial impact.</td></tr>
+    <tr><td>7</td><td>High</td><td>Product sorted, portion scrapped. Major rework required. Customer dissatisfied.</td></tr>
+    <tr><td>6</td><td>Moderate</td><td>Portion scrapped with no sorting. Major rework required.</td></tr>
+    <tr><td>5</td><td>Low</td><td>100% product reworked offline. Minor disruption.</td></tr>
+    <tr><td>4</td><td>Very Low</td><td>Product sorted with portion reworked. Minor inconvenience.</td></tr>
+    <tr><td>3</td><td>Minor</td><td>Portion reworked online. Slight inconvenience.</td></tr>
+    <tr><td>2</td><td>Minor</td><td>Portion reworked in-station. Very slight inconvenience.</td></tr>
+    <tr><td>1</td><td>None</td><td>Slight inconvenience or no effect. No detectable impact.</td></tr>
+  </tbody>
+</table>
+
+<!-- OCCURRENCE SCALE -->
+<div class="section-title"><h2>Occurrence Rating Scale (O)</h2></div>
+<table class="scale-table">
+  <thead><tr><th>Rank</th><th>Keyword</th><th>Failure Rate (PPM)</th><th>Likelihood</th></tr></thead>
+  <tbody>
+    <tr><td>10</td><td>Very High</td><td>≥100,000 PPM</td><td>≥1 in 10</td></tr>
+    <tr><td>9</td><td>Very High</td><td>50,000 PPM</td><td>1 in 20</td></tr>
+    <tr><td>8</td><td>High</td><td>20,000 PPM</td><td>1 in 50</td></tr>
+    <tr><td>7</td><td>High</td><td>10,000 PPM</td><td>1 in 100</td></tr>
+    <tr><td>6</td><td>Moderate</td><td>5,000 PPM</td><td>1 in 200</td></tr>
+    <tr><td>5</td><td>Moderate</td><td>2,000 PPM</td><td>1 in 500</td></tr>
+    <tr><td>4</td><td>Moderate</td><td>500 PPM</td><td>1 in 2,000</td></tr>
+    <tr><td>3</td><td>Low</td><td>100 PPM</td><td>1 in 10,000</td></tr>
+    <tr><td>2</td><td>Low</td><td>10 PPM</td><td>1 in 100,000</td></tr>
+    <tr><td>1</td><td>Remote</td><td>≤1 PPM</td><td>&lt;1 in 1,000,000</td></tr>
+  </tbody>
+</table>
+
+<!-- DETECTION SCALE -->
+<div class="section-title"><h2>Detection Rating Scale (D)</h2></div>
+<table class="scale-table">
+  <thead><tr><th>Rank</th><th>Keyword</th><th>Likelihood of Detection</th></tr></thead>
+  <tbody>
+    <tr><td>10</td><td>Almost Impossible</td><td>No design control; cannot detect potential failure</td></tr>
+    <tr><td>9</td><td>Very Remote</td><td>Very remote chance design control will detect failure</td></tr>
+    <tr><td>8</td><td>Remote</td><td>Remote chance design control will detect failure</td></tr>
+    <tr><td>7</td><td>Very Low</td><td>Very low chance design control will detect failure</td></tr>
+    <tr><td>6</td><td>Low</td><td>Low chance design control will detect failure</td></tr>
+    <tr><td>5</td><td>Moderate</td><td>Moderate chance design control will detect failure</td></tr>
+    <tr><td>4</td><td>Moderately High</td><td>Moderately high chance design control will detect failure</td></tr>
+    <tr><td>3</td><td>High</td><td>High chance design control will detect failure</td></tr>
+    <tr><td>2</td><td>Very High</td><td>Very high chance design control will detect failure</td></tr>
+    <tr><td>1</td><td>Almost Certain</td><td>Design control will almost certainly detect failure</td></tr>
+  </tbody>
+</table>
+
+<!-- ACADEMIC REFERENCES -->
+<div class="reference">
+  <h4 style="color:#ffd700; margin:0 0 10px 0;">📚 Academic & Industry References</h4>
+  <p><strong>AIAG & VDA (2019).</strong> <em>Failure Mode and Effects Analysis (FMEA) Handbook</em>. Automotive Industry Action Group.</p>
+  <p><strong>Stamatis, D. H. (2003).</strong> <em>Failure Mode and Effect Analysis: FMEA from Theory to Execution</em>. ASQ Quality Press.</p>
+  <p><strong>Carlson, C. S. (2012).</strong> <em>Effective FMEAs: Achieving Safe, Reliable, and Economical Products and Processes using Failure Mode and Effects Analysis</em>. John Wiley & Sons.</p>
+  <p><strong>Liu, H. C., Liu, L., & Liu, N. (2013).</strong> Risk evaluation approaches in failure mode and effects analysis: A literature review. <em>Expert Systems with Applications</em>, 40(2), 828-838.</p>
+  <p><strong>ISO 9001:2015</strong> - Quality management systems - Requirements (Clause 8.5.3 - Control of nonconforming outputs)</p>
+  <p><strong>BS 5760-5:1991</strong> - Reliability of systems, equipment and components. Guide to failure modes, effects and criticality analysis (FMEA and FMECA).</p>
+</div>
+
+<div class="intro-block">
+  <h4 style="color:#ffd700;">📝 Student Reflection & Innovation</h4>
+  <p>Through this PFMEA analysis for the Phones-R-Us project, several key insights were gained. The highest RPN (400) was assigned to the operator injury risk from sharp casing edges, demonstrating that safety risks must take priority regardless of production targets. Traditional FMEA approaches focus primarily on product quality, but this analysis expanded to include operator safety as a critical failure mode.</p>
+  <p>An innovative modification applied was the integration of real-time monitoring into the detection rating. By proposing in-line vision systems for edge quality inspection, the detection rating for sharp edges could be reduced from 8 to 3, lowering the RPN from 400 to 150. This aligns with Industry 4.0 principles of smart manufacturing and real-time quality control.</p>
+  <p>Additionally, the FESTO assembly line's pressing station (Station 4) was identified as a bottleneck with RPN 240. Rather than simply increasing inspection frequency, a preventive approach was adopted: statistical process control (SPC) on incoming casing dimensions, shifting from detection to prevention. This reflects a continuous improvement mindset central to modern quality management.</p>
+</div>
+
+</div>
+
+<div class="footer">
+  Paniz Manufacturing Company | PFMEA Analysis | Phones-R-Us Project
+</div>
+
+<script>
+function calculateRPN() {
+  var s = parseInt(document.getElementById('severity').value);
+  var o = parseInt(document.getElementById('occurrence').value);
+  var d = parseInt(document.getElementById('detection').value);
+  var rpn = s * o * d;
+  document.getElementById('rpnValue').innerHTML = rpn;
+  
+  var riskElement = document.getElementById('riskLevel');
+  if (rpn >= 300) {
+    riskElement.innerHTML = '🔴 <span style="color:#ff6666;">CRITICAL RISK - Immediate action required</span>';
+  } else if (rpn >= 150) {
+    riskElement.innerHTML = '🟠 <span style="color:#ffaa66;">HIGH RISK - Action required</span>';
+  } else if (rpn >= 60) {
+    riskElement.innerHTML = '🟡 <span style="color:#ffff66;">MEDIUM RISK - Monitor and consider action</span>';
+  } else {
+    riskElement.innerHTML = '🟢 <span style="color:#66ff66;">LOW RISK - Acceptable, continue monitoring</span>';
+  }
+}
+</script>
+
+</body>
+</html>
